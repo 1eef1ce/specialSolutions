@@ -18,3 +18,9 @@ require('foundation-sites');
 
 
 $(document).foundation();
+$( document ).ready(function() {
+    $('#pagepiling').pagepiling({
+        direction: 'horizontal',
+    });
+
+});

@@ -75,11 +75,17 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
+$light-gray: #acadb5;
+$medium-gray: #68696e;
+$dark-gray: #8d8e99;
+$black: #000000;
+$white: #ffffff;
+$orange: #fe8101;
+$dark-blue: #1a1e2b;
+$bg-color: #070a0f;
+$button-border: #e2801e;
+$button-border-hover: #ffdb8d;
+$tab-content: #252936;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Montserrat', Arial, sans-serif;
@@ -223,13 +229,13 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $white;
-$accordion-plusminus: true;
+$accordion-background: $bg-color;
+$accordion-plusminus: false;
 $accordion-title-font-size: rem-calc(12);
 $accordion-item-color: $primary-color;
 $accordion-item-background-hover: $light-gray;
 $accordion-item-padding: 1.25rem 1rem;
-$accordion-content-background: $white;
+$accordion-content-background: $dark-gray;
 $accordion-content-border: 1px solid $light-gray;
 $accordion-content-color: $body-font-color;
 $accordion-content-padding: 1rem;
@@ -794,17 +800,17 @@ $table-stack-breakpoint: medium;
 // --------
 
 $tab-margin: 0;
-$tab-background: $white;
-$tab-color: $primary-color;
-$tab-background-active: $light-gray;
-$tab-active-color: $primary-color;
+$tab-background: $bg-color;
+$tab-color: $white;
+$tab-background-active: $bg-color;
+$tab-active-color: $white;
 $tab-item-font-size: rem-calc(12);
-$tab-item-background-hover: $white;
+$tab-item-background-hover: transparent;
 $tab-item-padding: 1.25rem 1.5rem;
-$tab-content-background: $white;
+$tab-content-background: $bg-color;
 $tab-content-border: $light-gray;
 $tab-content-color: $body-font-color;
-$tab-content-padding: 1rem;
+$tab-content-padding: 0;
 
 // 52. Thumbnail
 // -------------
