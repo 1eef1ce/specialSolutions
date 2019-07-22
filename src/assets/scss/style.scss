@@ -3,6 +3,7 @@ $font-size-bigger: 1.25rem;
 $font-size-smaller: 0.75rem;
 $font-size-h1: 4.375rem;
 $offset-top: 19.25rem;
+$sideMenu-width: 24.75rem;
 @mixin glow {
   box-shadow: 0 0 28px 7px rgba(255, 120, 0, 0.41),
   inset 0 0 28px 7px rgba(255, 120, 0, 0.41),
@@ -29,7 +30,7 @@ html {
   @media screen and (max-width: 1200px) {
     font-size: 14px;
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 1440px) {
     font-size: 12px;
   }
 }
@@ -38,15 +39,8 @@ body {
   color: $black;
   line-height: normal;
   background-color: $bg-color;
-  @media screen and (max-width: 640px){
+  @media screen and (max-width: 1440px){
     font-size: 1rem;
-  }
-}
-.column,
-.columns {
-  @media screen and (max-width: 640px){
-    padding-left: 2.15rem;
-    padding-right: 2.15rem;
   }
 }
 .btn-custom {
@@ -59,19 +53,46 @@ body {
   &:focus {
     background-color: $orange;
   }
-  @media screen and (max-width: 640px){
+  @media screen and (max-width: 1440px){
     font-size: 1rem;
+  }
+}
+.button {
+  &.hollow {
+    margin: 0;
+    padding: 1.25em 0.875em;
+    border: 1px solid $button-border;
+    font-size: $font-size-normal;
+    color: $white;
+    &:hover,
+    &:focus{
+      color: $button-border-hover;
+      border-color: $button-border-hover;
+      @include glow;
+    }
   }
 }
 .mainPage {
   position: relative;
   height: 100vh;
 }
+.title-bar {
+  width: 100%;
+  padding: 1.25rem;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  @media screen and (max-width: 1024px) and (min-width: 769px) {
+    width: 10rem;
+    padding: 0 3rem;
+    height: 100%;
+  }
+}
 .sideMenu {
   position: absolute;
   left: 0;
   background: $bg-color;
-  width: 396px;
+  width: $sideMenu-width;
   padding: 4.375rem 4.375rem 5rem 5.85rem;
   height: 100vh;
   z-index: 1000;
@@ -99,29 +120,71 @@ body {
       }
     }
     a {
+      display: inline-block;
       color: $white;
       line-height: normal;
       padding: 0.5rem 1rem;
     }
   }
   .button {
-    margin: 0;
-    padding: 1.25em 0.875em;
-    border: 1px solid $button-border;
-    font-size: $font-size-normal;
-    color: $white;
-    background-color: transparent;
-    background-image: url("../img/button-arrow.png");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 19px) center;
-    text-align: left;
-    padding-left: 1.875em;
-    &:hover,
-    &:focus{
-      background-image: url("../img/button-arrow-hover.png");
-      border-color: $button-border-hover;
-      @include glow;
+    &.hollow {
+      background-color: transparent;
+      background-image: url("../img/button-arrow.png");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 19px) center;
+      text-align: left;
+      padding-left: 1.875em;
+      &:hover,
+      &:focus{
+        background-image: url("../img/button-arrow-hover.png");
+      }
     }
+  }
+  @media screen and (max-width: 1024px) {
+    left: 10rem;
+    width: 100%;
+    padding: 2rem 0;
+    .menu.vertical {
+      li {
+        &:before {
+          content: none;
+        }
+      }
+    }
+    a {
+      font-size: 1.1667rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    left: 0;
+    top: 46px;
+  }
+}
+.section {
+  width: calc(100% - #{$sideMenu-width})!important;
+  right: 0;
+  @media screen and (max-width: 1024px) {
+    width: 100%!important;
+  }
+}
+.section-content {
+  margin-left: 5%;
+  @media screen and (min-width: 1367px) {
+    .block-consultation & {
+      max-width: 88.3%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    margin-left: calc(5% + 10rem);
+  }
+  @media screen and (max-width: 768px) {
+    margin-left: auto;
+    max-width: 86.79%;
+  }
+  @media screen and (max-width: 640px) {
+    max-width: 75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 .block-summary,
@@ -129,8 +192,11 @@ body {
 .block-projects,
 .block-consultation,
 .block-contacts {
-  padding: $offset-top 0 4.8rem 16.25rem;
+  padding: $offset-top 0 4.8rem 0;
   background-color: $bg-color;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
   .h1 {
     font-size: $font-size-h1;
     font-weight: 700;
@@ -147,17 +213,30 @@ body {
     color: $medium-gray;
     line-height: 1.7;
   }
-  @media screen and (max-width: 640px){
-    padding: 15.5rem 0 0;
+  @media screen and (max-width: 1440px){
+    .h1 {
+      font-size: 4rem;
+    }
+    .lead {
+      font-size: 1.3333rem;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    padding: 0;
+  }
+  @media screen and (max-width: 767px){
     .h1 {
       font-size: 1.91667rem;
     }
+  }
+  @media screen and (max-width: 640px){
     .lead {
       font-size: 1.1667rem;
     }
   }
 }
 .block-summary {
+  background-image: url("../img/bg-main.jpg");
   .h1 {
     color: $white;
   }
@@ -179,6 +258,7 @@ body {
 }
 .block-about {
   background-color: $white;
+  background-image: url("../img/bg-about.jpg");
   .h1 {
     color: $black;
   }
@@ -187,7 +267,7 @@ body {
       font-size: $font-size-smaller;
     }
   }
-  @media screen and (max-width: 640px){
+  @media screen and (max-width: 1440px){
     p {
       &:not(.lead) {
         font-size: 1rem;
@@ -197,18 +277,20 @@ body {
 }
 .block-projects {
   padding-top: 0;
+  background-image: url("../img/bg-projects.jpg");
   .h1 {
     color: $white;
     margin-bottom: 4.375rem;
-    margin-top: $offset-top+4rem;
+    margin-top: 18rem;
   }
   .project-wrapper {
     background-color: $white;
     position: absolute;
     right: 0;
-    width: 23.54167%;
+    top: 0;
+    width: 30%;
     height: 100vh;
-    padding: $offset-top+3.5rem 5.625rem 4.8rem 4.375rem;
+    padding: 18rem 5.625rem 4.8rem 4.375rem;
     p {
       color: $black;
       margin-bottom: 2.125rem;
@@ -220,22 +302,66 @@ body {
       margin-bottom: 3rem;
     }
   }
-  @media screen and (max-width: 640px){
+  .button {
+    &.hollow {
+      margin-top: 3rem;
+    }
+  }
+  @media screen and (max-width: 1440px){
     .project-wrapper {
-      background-color: transparent;
-      position: relative;
-      right: auto;
-      width: 100%;
-      height: auto;
-      padding: 7rem 2.15rem 0;
+      width: 34.145%;
+      padding: 18rem 6.5rem 0 5rem;
       p {
-        color: $white;
-        margin-bottom: 1.5rem;
         &:not(.lead) {
           font-size: 0.75rem;
         }
       }
+    }
+  }
+  @media screen and (max-width: 1024px){
+    .h1 {
+      margin-top: 8rem;
+    }
+    .project-wrapper {
+      width: 33%;
+      padding: 15rem 4rem 0 5rem;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .h1 {
+      margin-top: 8.5rem;
+    }
+    .project-wrapper {
+      background-color: $white;
+      position: relative;
+      right: auto;
+      width: 100%;
+      height: auto;
+      padding: 4.5rem 4rem 3rem;
+      p {
+        color: $black;
+        margin-bottom: 1.5rem;
+      }
       .lead {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) and (min-width: 641px){
+    .project-small {
+      max-width: 100%;
+      background-color: $white;
+      padding: 0 4rem;
+    }
+  }
+  @media screen and (max-width: 640px){
+    .project-wrapper {
+      background-color: transparent;
+      max-width: 75rem;
+      margin: auto;
+      padding: 7rem 2rem 0;
+      p {
+        color: $white;
         margin-bottom: 1.5rem;
       }
     }
@@ -243,10 +369,6 @@ body {
 }
 .block-consultation {
   padding-top: 10rem;
-  .row-custom {
-    max-width: 81%;
-    margin-left: 14%;
-  }
   .h2 {
     color: $white;
     font-size: 2.875rem;
@@ -308,10 +430,10 @@ body {
     &:before {
       content: '';
       position: absolute;
-      top: 50%;
+      top: 0;
       right: 3.25rem;
       width: 25px;
-      height: 12px;
+      height: 100%;
       background: url(../img/arrow-down.png) no-repeat center;
     }
   }
@@ -333,11 +455,7 @@ body {
   :last-child:not(.is-active) > .accordion-title {
     border-bottom: 0;
   }
-  @media screen and (max-width: 640px){
-    .row-custom {
-      max-width: 75rem;
-      margin-left: auto;
-    }
+  @media screen and (max-width: 1440px){
     .h2 {
       font-size: 1.5rem;
     }
@@ -347,11 +465,43 @@ body {
       }
     }
     .accordion-title {
+      padding: 1.2rem;
       font-size: 1rem;
+      &:before {
+        width: 15px;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px){
+    padding-top: 0;
+    .tabs-title {
+      margin-right: 4.5rem;
+    }
+    .accordion-title {
+      &:before {
+        width: 10px;
+        right: 1.8rem;
+      }
+    }
+  }
+  @media screen and (max-width: 640px){
+    .row-custom {
+      max-width: 75rem;
+      margin-left: auto;
+    }
+    .tabs-title {
+      margin-right: 3.5rem;
+    }
+    .accordion-title {
+      &:before {
+        width: 8px;
+        right: 1rem;
+      }
     }
   }
 }
 .block-contacts {
+  background-image: url("../img/bg-contacts.jpg");
   .h1 {
     color: $white;
     margin-bottom: 4.875rem;
@@ -359,13 +509,17 @@ body {
   .tabs,
   .tabs-content {
     border: 0;
+    background-color: transparent;
   }
   .tabs-title{
     > a {
-      display: inline-block;
       padding: 0;
       font-size: inherit;
       color: inherit;
+      &:focus,
+      &[aria-selected='true'] {
+        background-color: transparent;
+      }
     }
   }
   .contacts-city-wrapper {
@@ -439,6 +593,9 @@ body {
       }
     }
   }
+  .requisites-wrapper {
+    position: relative;
+  }
   .requisites {
     width: 100%;
     padding: 1.75rem 2.5rem 1.75rem 1.75rem;
@@ -462,7 +619,7 @@ body {
       left: 5px;
     }
   }
-  button[data-toggle="show-requisites"] {
+  .show-requisites {
     padding: 1.75rem 0 0;
     margin: 0;
     text-decoration: underline;
@@ -473,19 +630,18 @@ body {
       color: $orange;
     }
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 1440px) {
     .contacts-city {
-      font-size: 1rem;
-      &:after {
-        width: 100%;
-      }
+      font-size: 3rem;
     }
     .contacts-wrapper {
       .contacts {
-        font-size: 1.1667rem;
+        font-size: 1.3333rem;
       }
     }
     .requisites {
+      width: 115%;
+      padding: 2rem 2.5rem;
       p {
         font-size: 1rem;
         &:first-of-type {
@@ -497,5 +653,76 @@ body {
       font-size: 1rem;
     }
   }
+  @media screen and (max-width: 1024px) {
+    .contacts-city {
+      font-size: 2.3333rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .contacts-city-wrapper {
+      margin-bottom: 6rem;
+    }
+    .contacts-city {
+      font-size: 3rem;
+    }
+    .contacts-wrapper {
+      &.align-middle {
+        align-items: normal;
+      }
+      .contacts-text {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .contacts {
+        line-height: 1.375;
+      }
+    }
+    .requisites {
+      width: 145%;
+      .triangle {
+        left: 60%;
+      }
+    }
+    .show-requisites {
+      width: 100%;
+      text-align: left;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .h1 {
+      margin-bottom: 3rem;
+    }
+    .contacts-wrapper {
+      margin-bottom: 1rem;
+      .contacts {
+        font-size: 1.1667rem;
+      }
+    }
+    .contacts-city-wrapper {
+      margin-bottom: 3rem;
+    }
+    .contacts-city {
+      font-size: 1rem;
+      &:after {
+        width: 100%;
+      }
+    }
+    .requisites-wrapper {
+      margin: 0 -1.2rem!important;
+    }
+    .requisites {
+      width: 100%;
+      padding: 1.15rem;
+      .triangle {
+        left: 8px;
+      }
+    }
+    .show-requisites {
+      width: auto;
+      text-align: center;
+      padding-left: 1.2rem;
+    }
+  }
 }
+
 

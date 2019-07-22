@@ -1,11 +1,10 @@
 <div class="mainPage">
-    <div class="title-bar" data-responsive-toggle="side-menu" data-hide-for="medium">
+    <div class="title-bar" data-responsive-toggle="side-menu" data-hide-for="large-tweak">
         <button class="menu-icon" type="button" data-toggle="side-menu"></button>
-        <div class="title-bar-title">Menu</div>
     </div>
     <!--side menu-->
     <aside class="sideMenu flex-container flex-dir-column align-justify" id="side-menu">
-        <div class="logo">
+        <div class="logo show-for-xlarge">
             <a href="/"><img src="{{root}}assets/img/logo.png" alt="Специальные решения"></a>
         </div>
         <ul class="vertical menu">
@@ -19,21 +18,21 @@
             <li><a href="#">Новости</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
-        <a href="#" class="button">Перейти в каталог</a>
+        <a href="#" class="button hollow show-for-xlarge">Перейти в каталог</a>
     </aside>
     <div id="pagepiling">
         <!--screen1--summary-->
         <section class="section block-summary">
-            <div class="row column">
+            <div class="row column section-content">
                 <h2 class="h1">Интеллектуальное оборудование</h2>
                 <p class="lead">
                     для горнодобывающей промышленности
                 </p>
-                <p class="large-18 hide-for-small-only">
+                <p class="large-18 show-for-xlarge">
                     Занимаемся производством и инжинирингом сложного горнодобывающего оборудования.
                     Представляем крупные машиностроительные заводы по всему миру.
                 </p>
-                <div class="large-19 hide-for-small-only">
+                <div class="large-19 show-for-xlarge">
                     <ul class="row">
                         <li class="column large-12">Обогатительное оборудование</li>
                         <li class="column large-12">Обжиговое оборудование</li>
@@ -49,7 +48,7 @@
         </section>
         <!--screen2--about-->
         <section class="section block-about">
-            <div class="row column">
+            <div class="row column section-content">
                 <h2 class="h1 large-12">Опережая технологии</h2>
                 <p class="lead large-12">
                     Работаем совместно с четырьмя крупными научно-исследовательскими институтами
@@ -80,30 +79,46 @@
         </section>
         <!--screen3--projects-->
         <section class="section block-projects">
-            <div class="project-wrapper">
-                <p class="lead">
-                    Вулканизационный пресс серии «КОМПАКТ» ПА 1800/1500 с водяным охлаждением.
-                </p>
-                <p>
-                    <b>Цели:</b><br>
-                    Разработка и внедрение пресса с водяным охлаждением.
-                </p>
-                <p class="hide-for-small-only">
-                    <b>Итог:</b><br>
-                    Разработан пресс для стыковки и ремонта всех типов конвейерных лент как в стационаре, так
-                    и на конвейерах необорудованных навесом. Пресс состоит из 3-х взаимозаменяемых секций, каждая секция может
-                    работать как в составе пресса, так и самостоятельно. Прочность стыка достигает 98% от прочности конвейерной ленты.
-                    Данный Вулканизационный пресс является полным аналогом импортного пресса выпускаемого Канадской компанией Almex.
-                </p>
+            <div class="row section-content show-for-medium-only">
+                <div class="column medium-14 large-16 xxlarge-18">
+                    <h2 class="h1">Проекты и решения</h2>
+                </div>
             </div>
-            <div class="row column ">
-                <h2 class="h1 hide-for-small-only">Проекты и решения</h2>
-                <img src="{{root}}assets/img/img-project-1.jpg">
+            <div class="project-wrapper">
+                <div class="row">
+                    <div class="column large-24 medium-12 small-24">
+                        <p class="lead">
+                            Вулканизационный пресс серии «КОМПАКТ» ПА 1800/1500 с водяным охлаждением.
+                        </p>
+                        <p>
+                            <b>Цели:</b><br>
+                            Разработка и внедрение пресса с водяным охлаждением.
+                        </p>
+                    </div>
+                    <div class="column large-24 medium-12 small-24">
+                        <p class="hide-for-small-only">
+                            <b>Итог:</b><br>
+                            Разработан пресс для стыковки и ремонта всех типов конвейерных лент как в стационаре, так
+                            и на конвейерах необорудованных навесом. Пресс состоит из 3-х взаимозаменяемых секций, каждая секция может
+                            работать как в составе пресса, так и самостоятельно. Прочность стыка достигает 98% от прочности конвейерной ленты.
+                            Данный Вулканизационный пресс является полным аналогом импортного пресса выпускаемого Канадской компанией Almex.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row section-content project-small">
+                <div class="column medium-14 large-13 xxlarge-18 show-for-large">
+                    <h2 class="h1">Проекты и решения</h2>
+                </div>
+                <div class="column large-13 xxlarge-18">
+                    <img src="{{root}}assets/img/img-project-1.jpg">
+                    <a href="#" class="button hollow expanded show-for-small-only">Все проекты и решения</a>
+                </div>
             </div>
         </section>
         <!--screen4--consultation-->
         <section class="section block-consultation">
-            <div class="row column row-custom">
+            <div class="row column section-content">
                 <h2 class="h2">нужна консультация по подбору решения?</h2>
                 <ul class="tabs" data-tabs id="example-tabs">
                     <li class="tabs-title is-active"><a href="#item" aria-selected="true">По оборудованию</a></li>
@@ -132,7 +147,7 @@
                             </li>
                         </ul>
                         <div class="row">
-                            <div class="column large-6">
+                            <div class="column large-6 medium-9">
                                 <button type="button" class="button expanded btn-custom">Получить консультацию</button>
                             </div>
                         </div>
@@ -145,12 +160,12 @@
         </section>
         <!--screen5--contacts-->
         <section class="section block-contacts">
-            <div class="row column">
+            <div class="row column section-content">
                 <h2 class="h1">Контакты</h2>
             </div>
-            <div class="row align-middle">
-                <div class="column large-11 small-24">
-                    <ul class="tabs vertical" data-tabs id="city-tabs">
+            <div class="row align-middle section-content">
+                <div class="column large-11 medium-10 small-24">
+                    <ul class="tabs flex-container flex-dir-row medium-flex-dir-column align-justify" data-tabs id="city-tabs">
                         <li class="tabs-title contacts-city-wrapper is-active">
                             <a href="#city1" aria-selected="true">
                                 <div class="contacts-text hide-for-small-only">
@@ -183,94 +198,106 @@
                         </li>
                     </ul>
                 </div>
-                <div class="column large-11 small-24">
+                <div class="column large-11 large-offset-1 medium-12 medium-offset-2 small-24">
                     <div class="tabs-content" data-tabs-content="city-tabs">
                         <div class="tabs-panel is-active" id="city1">
-                            <div class="contacts-wrapper flex-container align-middle">
-                                <div class="contacts-text">Адрес<br><a href="#">На карте</a></div>
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
+                                <div class="contacts-text">
+                                    Адрес<br class="show-for-large-only">
+                                    <span class="hide-for-large-only">&nbsp;|&nbsp;</span>
+                                    <a href="#">На карте</a>
+                                </div>
                                 <div class="contacts">ул. Молокова, 37 а<br>БЦ «Капитал», оф. 8-04</div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
                                 <div class="contacts-text">Телефон</div>
                                 <div class="contacts"><a href="tel:+73912904425">8 (391) 290-44-25</a></div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
                                 <div class="contacts-text">E-mail</div>
                                 <div class="contacts"><a href="mailto:sp@spslt.ru">sp@spslt.ru</a></div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle margin-bottom-1">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle margin-bottom-1">
                                 <div class="contacts-text">Режим работы<br>UTC+7</div>
                                 <div class="contacts">пн-пт<br>с 8:00 до 17:00</div>
                             </div>
                         </div>
                         <div class="tabs-panel" id="city2">
-                            <div class="contacts-wrapper flex-container align-middle">
-                                <div class="contacts-text">Адрес<br><a href="#">На карте</a></div>
-                                <div class="contacts">ул. Молокова, 37 а<br>БЦ «Капитал», оф. 8-01</div>
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
+                                <div class="contacts-text">
+                                    Адрес<br class="show-for-large-only">
+                                    <span class="hide-for-large-only">&nbsp;|&nbsp;</span>
+                                    <a href="#">На карте</a>
+                                </div>
+                                <div class="contacts">ул. Молокова, 37 а<br>БЦ «Капитал», оф. 8-02</div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
                                 <div class="contacts-text">Телефон</div>
                                 <div class="contacts"><a href="tel:+73912904425">8 (999) 290-44-25</a></div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
                                 <div class="contacts-text">E-mail</div>
                                 <div class="contacts"><a href="mailto:sp@spslt.ru">sp@spslt.ru</a></div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle margin-bottom-1">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle margin-bottom-1">
                                 <div class="contacts-text">Режим работы<br>UTC+7</div>
-                                <div class="contacts">пн-пт<br>с 9:00 до 18:00</div>
+                                <div class="contacts">пн-пт<br>с 8:00 до 17:00</div>
                             </div>
                         </div>
                         <div class="tabs-panel" id="city3">
-                            <div class="contacts-wrapper flex-container align-middle">
-                                <div class="contacts-text">Адрес<br><a href="#">На карте</a></div>
-                                <div class="contacts">ул. Молокова, 37 а<br>БЦ «Капитал», оф. 8-03</div>
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
+                                <div class="contacts-text">
+                                    Адрес<br class="show-for-large-only">
+                                    <span class="hide-for-large-only">&nbsp;|&nbsp;</span>
+                                    <a href="#">На карте</a>
+                                </div>
+                                <div class="contacts">ул. Молокова, 37 а<br>БЦ «Капитал», оф. 8-01</div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
                                 <div class="contacts-text">Телефон</div>
                                 <div class="contacts"><a href="tel:+73912904425">8 (351) 990-44-25</a></div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle">
                                 <div class="contacts-text">E-mail</div>
                                 <div class="contacts"><a href="mailto:sp@spslt.ru">sp@spslt.ru</a></div>
                             </div>
-                            <div class="contacts-wrapper flex-container align-middle margin-bottom-1">
+                            <div class="contacts-wrapper flex-container flex-dir-column large-flex-dir-row align-middle margin-bottom-1">
                                 <div class="contacts-text">Режим работы<br>UTC+7</div>
-                                <div class="contacts">пн-пт<br>с 10:00 до 20:00</div>
+                                <div class="contacts">пн-пт<br>с 8:00 до 17:00</div>
                             </div>
                         </div>
                     </div>
-                    <div class="row column position-relative">
-                        <button class="button clear" type="button" data-toggle="show-requisites">Посмотреть Реквизиты</button>
+                    <div class="row column requisites-wrapper">
+                        <button class="button clear show-requisites" type="button" data-toggle="show-requisites">Посмотреть Реквизиты</button>
                         <div class="dropdown-pane top requisites" id="show-requisites" data-dropdown>
                             <div class="triangle"></div>
                             <div class="row">
-                                <p class="column large-24 margin-bottom-2">
+                                <p class="column large-24 medium-24 small-24 margin-bottom-2">
                                     ООО "Специальные решения"
                                 </p>
-                                <p class="column large-10 margin-bottom-2">
+                                <p class="column large-10 medium-12 small-24 margin-bottom-2">
                                     <b>ИНН:</b> 2465322195<br>
                                     <b>ОГРН:</b> 1142468062395
                                 </p>
-                                <p class="column large-10 margin-bottom-2">
+                                <p class="column large-10 medium-12 small-24 margin-bottom-2">
                                     <b>КПП:</b> 246501001<br>
                                     <b>ОКПО:</b> 21866732
                                 </p>
-                                <p class="column large-24 margin-bottom-0">
+                                <p class="column large-24 medium-24 small-24 margin-bottom-0">
                                     <b>Банк:</b> КРАСНОЯРСКОЕ ОТДЕЛЕНИЕ N 8646 ПАО СБЕРБАНК
                                 </p>
-                                <p class="column large-12 margin-bottom-2">
+                                <p class="column large-12 medium-12 small-24 margin-bottom-2">
                                     <b>р/с:</b> 40702810331000004147<br>
                                     <b>БИК:</b> 040407627
                                 </p>
-                                <p class="column large-12 margin-bottom-2">
+                                <p class="column large-12 medium-12 small-24 margin-bottom-2">
                                     <b>к/с:</b> 30101810800000000627
                                 </p>
-                                <p class="column large-24 margin-bottom-0">
+                                <p class="column large-24 medium-24 small-24 margin-bottom-0">
                                     <b>Юридический адрес:</b> 660135, Красноярский край,
                                     г. Красноярск, ул. Молокова, дом № 37а, пом. 70
                                 </p>
-                                <p class="column large-24 margin-bottom-0">
+                                <p class="column large-24 medium-24 small-24 margin-bottom-0">
                                     <b>Фактический адрес:</b> 660135, Красноярский край,
                                     г. Красноярск, ул. Молокова, дом № 37а, офис. 8-04
                                 </p>
