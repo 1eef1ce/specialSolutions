@@ -17,10 +17,31 @@ require('foundation-sites');
 //import './lib/foundation-explicit-pieces';
 
 
+
 $(document).foundation();
 $( document ).ready(function() {
+    /*
+    var activate=false;
+        $(window).resize(function() {
+            if (($(window).width() > 475)&&(activate===false)) {
+                $('#pagepiling').pagepiling({
+                    direction: 'horizontal',
+                });
+                activate=true;
+            }
+        }).resize();
+    */
     $('#pagepiling').pagepiling({
         direction: 'horizontal',
     });
 
+    $(".menu-toggler").click(function () {
+        $(this).toggleClass("active");
+    });
+
+    if ($('.title-bar').length > 0) {
+        $('.mainPage').css('padding-top', $(this).find('.title-bar').innerHeight());
+    }
+
 });
+

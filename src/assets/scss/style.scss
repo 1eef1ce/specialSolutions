@@ -27,9 +27,6 @@ html {
   @media screen and (max-width: 1920px){
     font-size: 16px;
   }
-  @media screen and (max-width: 1200px) {
-    font-size: 14px;
-  }
   @media screen and (max-width: 1440px) {
     font-size: 12px;
   }
@@ -71,21 +68,103 @@ body {
       @include glow;
     }
   }
+  @media screen and (max-width: 1440px) {
+    &.hollow {
+      font-size: 1rem;
+    }
+  }
 }
 .mainPage {
   position: relative;
   height: 100vh;
 }
 .title-bar {
-  width: 100%;
-  padding: 1.25rem;
+  background-color: $bg-color;
   position: absolute;
   top: 0;
   z-index: 100;
-  @media screen and (max-width: 1024px) and (min-width: 769px) {
-    width: 10rem;
-    padding: 0 3rem;
+  .logo-small {
+    position: absolute;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 112px;
+    padding: 48px 24px 55px 32px;
     height: 100%;
+    .logo-small {
+      top: 48px;
+      left: 32px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 106px;
+    padding: 42px 58px 35px 68px;
+    .logo-small {
+      width: 53px;
+      left: 68px;
+      top: 42px;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    height: 47px;
+    padding: 23px 26px 8px;
+    .logo-small {
+      width: 40px;
+      left: 26px;
+      top: 23px;
+    }
+  }
+}
+.drilldown {
+  .is-drilldown-submenu {
+    background-color: $bg-color;
+    &.is-active {
+      display: flex!important;
+    }
+  }
+  .is-drilldown-submenu-parent {
+    >a {
+      &:after {
+        border: 0;
+        content: '\203A';
+        top: 0.5em;
+        margin-top: 0;
+        right: -4px;
+      }
+    }
+  }
+  .js-drilldown-back {
+    width: 100%;
+    >a {
+      &:before {
+        border: 0;
+        content: '\2039';
+        margin-right: 1rem;
+        vertical-align: unset;
+      }
+    }
+  }
+}
+.is-submenu-item {
+  a {
+    font-size: 1rem;
+  }
+}
+.menu-sub {
+  display: none;
+}
+.toggleMenu {
+  display: block;
+}
+.accordion-menu {
+  .is-accordion-submenu-parent {
+    &:not(.has-submenu-toggle) {
+      >a {
+        &:after {
+          content: none;
+        }
+      }
+    }
   }
 }
 .sideMenu {
@@ -93,16 +172,22 @@ body {
   left: 0;
   background: $bg-color;
   width: $sideMenu-width;
-  padding: 4.375rem 4.375rem 5rem 5.85rem;
+  padding: 4.375rem 4.75rem 5rem;
   height: 100vh;
   z-index: 1000;
-  .menu.vertical {
+  >.is-drilldown {
+    max-width: 100%!important;
+    min-height: 100%!important;
+    margin: 25% 0;
+  }
+  .logo {
+    margin-left: 2.125rem;
+  }
+  .menu-main {
+    margin-left: 1.125rem;
     li {
       position: relative;
       margin-bottom: 1.25rem;
-      &:last-of-type {
-        margin-bottom: 0;
-      }
       &:before {
         content: '';
         position: absolute;
@@ -122,6 +207,7 @@ body {
     a {
       display: inline-block;
       color: $white;
+      background-color: $bg-color;
       line-height: normal;
       padding: 0.5rem 1rem;
     }
@@ -140,24 +226,81 @@ body {
       }
     }
   }
+  @media screen and (max-width: 1440px) {
+    .logo {
+      width: 9rem;
+    }
+    .button {
+      &.hollow {
+        background-size: 6px;
+      }
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .menu-main {
+      >div {
+        flex-shrink: unset;
+      }
+    }
+  }
   @media screen and (max-width: 1024px) {
-    left: 10rem;
-    width: 100%;
-    padding: 2rem 0;
-    .menu.vertical {
+    left: 112px;
+    width: calc(100% - 112px);
+    padding: 0 3.6667rem;
+    .menu-main {
       li {
         &:before {
           content: none;
         }
       }
+      a {
+        font-size: 1.3333rem;
+      }
     }
-    a {
-      font-size: 1.1667rem;
+    .submenu {
+      a {
+        font-size: 1rem;
+      }
+    }
+    .menu-sub {
+      margin-left: 2.5rem;
     }
   }
   @media screen and (max-width: 768px) {
+    width: 100%;
     left: 0;
-    top: 46px;
+    top: 106px;
+    padding: 0 4.66rem;
+  }
+  @media screen and (max-width: 640px) {
+    padding: 0 2.1667rem 7rem;
+    top: 47px;
+    .menu-main {
+      font-size: 1.1667rem;
+      li {
+        margin-bottom: 1rem;
+      }
+      a {
+        font-size: 1.1667rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+    .submenu {
+      a {
+        font-size: 1rem;
+      }
+    }
+    .menu-sub {
+      margin-left: 1.75rem;
+      a {
+        font-size: 1rem;
+      }
+    }
+    li {
+      &.js-drilldown-back {
+        margin-bottom: 2.25rem;
+      }
+    }
   }
 }
 .section {
@@ -168,6 +311,8 @@ body {
   }
 }
 .section-content {
+  position: relative;
+  z-index: 10;
   margin-left: 5%;
   @media screen and (min-width: 1367px) {
     .block-consultation & {
@@ -236,7 +381,18 @@ body {
   }
 }
 .block-summary {
-  background-image: url("../img/bg-main.jpg");
+  position: relative;
+  .bg-main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/bg-main.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+  }
   .h1 {
     color: $white;
   }
@@ -721,6 +877,77 @@ body {
       width: auto;
       text-align: center;
       padding-left: 1.2rem;
+    }
+  }
+}
+/** Hamburger icon **/
+.menu-toggler {
+  padding: 0;
+  font-size: 1rem;
+  border: 0;
+  margin: auto;
+}
+.menu-toggler {
+  .icon-bar {
+    display: block;
+    width: 39px;
+    height: 1px;
+    background: #f18a23;
+    position: relative;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    transform-origin: left center;
+    transition: all 0.25s;
+    +.icon-bar {
+      margin-top: 8px;
+    }
+    &:nth-of-type(2) {
+      width: 24px;
+    }
+  }
+  &.active {
+    .icon-bar {
+      &:nth-of-type(1) {
+        width: 25px;
+        transform: rotate(45deg);
+        top: 0;
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        width: 25px;
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .icon-bar {
+      width: 50px;
+      +.icon-bar {
+        margin-top: 5px;
+      }
+      &:nth-of-type(2) {
+        width: 36px;
+      }
+    }
+    &.active {
+      .icon-bar {
+        &:nth-of-type(1) {
+          width: 21px;
+          transform: rotate(45deg);
+          top: 0;
+        }
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+        &:nth-of-type(3) {
+          width: 21px;
+          transform: rotate(-45deg);
+          top: 3px;
+        }
+      }
     }
   }
 }
