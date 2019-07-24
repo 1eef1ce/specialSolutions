@@ -16,6 +16,27 @@ textarea {
   box-shadow: none !important;
   resize: none;
 }
+[type='text']:focus,
+[type='password']:focus,
+[type='date']:focus,
+[type='datetime']:focus,
+[type='datetime-local']:focus,
+[type='month']:focus,
+[type='week']:focus,
+[type='email']:focus,
+[type='number']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='time']:focus,
+[type='url']:focus,
+[type='color']:focus,
+textarea:focus {
+  outline: none;
+  border: 0;
+  background-color: $dark-blue;
+  box-shadow: none;
+  transition: none;
+}
 button,
 a {
   &:focus {
@@ -77,6 +98,63 @@ body {
 .mainPage {
   position: relative;
   height: 100vh;
+  .lang-panel {
+    position: absolute;
+    top: 6.5rem;
+    right: 5.75rem;
+    z-index: 10;
+    .lang {
+      font-size: 0.875rem;
+      color: #a1a5ac;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-right: 2.25rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &:hover,
+      &:focus,
+      &.active {
+        color: #ffdb8d;
+        @include glow;
+      }
+      .pp-viewing-page2 &,
+      .pp-viewing-page3 & {
+        color: $black;
+        &:hover,
+        &:focus,
+        &.active {
+          color: $orange;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .lang-panel {
+      top: 4.5rem;
+      right: 4rem;
+      .lang {
+        font-size: 1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding-top: 106px;
+    .lang-panel {
+      top: 2.5rem;
+      right: auto;
+      left: 5.6667rem;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    padding-top: 47px;
+    .lang-panel {
+      top: auto;
+      left: auto;
+      right: 2rem;
+      bottom: 2.5rem;
+    }
+  }
 }
 .title-bar {
   background-color: $bg-color;
@@ -186,7 +264,6 @@ body {
   .menu-main {
     margin-left: 1.125rem;
     li {
-      position: relative;
       margin-bottom: 1.25rem;
       &:before {
         content: '';
@@ -226,9 +303,19 @@ body {
       }
     }
   }
+  @media screen and (min-width: 1440px) {
+    .menu-main {
+      li {
+        position: relative;
+      }
+    }
+  }
   @media screen and (max-width: 1440px) {
     .logo {
       width: 9rem;
+    }
+    .menu-main {
+      margin-left: 0;
     }
     .button {
       &.hollow {
@@ -273,8 +360,9 @@ body {
     padding: 0 4.66rem;
   }
   @media screen and (max-width: 640px) {
-    padding: 0 2.1667rem 7rem;
+    padding: 0 2.1667rem;
     top: 47px;
+    height: calc(100% - 47px);
     .menu-main {
       font-size: 1.1667rem;
       li {
@@ -314,22 +402,31 @@ body {
   position: relative;
   z-index: 10;
   margin-left: 5%;
-  @media screen and (min-width: 1367px) {
+  @media screen and (min-width: 1440px) {
     .block-consultation & {
       max-width: 88.3%;
     }
   }
   @media screen and (max-width: 1024px) {
-    margin-left: calc(5% + 10rem);
+    margin-left: calc(3.5% + 10rem);
+    .block-consultation & {
+      max-width: 80%;
+    }
   }
   @media screen and (max-width: 768px) {
     margin-left: auto;
     max-width: 86.79%;
+    .block-consultation & {
+      max-width: 86.79%;
+    }
   }
   @media screen and (max-width: 640px) {
     max-width: 75rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    .block-consultation & {
+      max-width: 100%;
+    }
   }
 }
 .block-summary,
@@ -375,9 +472,24 @@ body {
     }
   }
   @media screen and (max-width: 640px){
+    background-image: none!important;
+    background-color: transparent!important;
+    padding: 2rem 0;
+    .h1 {
+      font-size: 1.9167rem;
+    }
     .lead {
       font-size: 1.1667rem;
     }
+  }
+}
+#pagepiling {
+  @media screen and (max-width: 640px) {
+    height: 100vh;
+    padding-bottom: 47px;
+    overflow: auto;
+    background: url("../img/bg-mobile.jpg") no-repeat center;
+    background-size: cover;
   }
 }
 .block-summary {
@@ -411,6 +523,9 @@ body {
       }
     }
   }
+  @media screen and (max-width: 640px) {
+    height: 100vh;
+  }
 }
 .block-about {
   background-color: $white;
@@ -428,7 +543,15 @@ body {
       &:not(.lead) {
         font-size: 1rem;
       }
+    }
   }
+  @media screen and (max-width: 640px) {
+    .h1 {
+      color: $white;
+    }
+    p {
+      color: $white;
+    }
   }
 }
 .block-projects {
@@ -444,6 +567,7 @@ body {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 100;
     width: 30%;
     height: 100vh;
     padding: 18rem 5.625rem 4.8rem 4.375rem;
@@ -511,11 +635,14 @@ body {
     }
   }
   @media screen and (max-width: 640px){
+    .h1 {
+      margin: 3rem 0 2.75rem;
+    }
     .project-wrapper {
       background-color: transparent;
       max-width: 75rem;
       margin: auto;
-      padding: 7rem 2rem 0;
+      padding: 0 2rem;
       p {
         color: $white;
         margin-bottom: 1.5rem;
@@ -570,61 +697,74 @@ body {
       }
     }
   }
-  .accordion-item {
+  select,
+  input {
+    height: auto;
     margin-bottom: 1.625rem;
-  }
-  .accordion-title {
     padding: 2.125rem 3.25rem;
     border: 0;
     font-size: $font-size-bigger;
     color: $white;
+    line-height: 1;
     background-color: $dark-blue;
-    &:hover,
-    &:focus {
+    transition: none;
+    &:hover {
       background-color: $orange;
     }
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 3.25rem;
-      width: 25px;
-      height: 100%;
-      background: url(../img/arrow-down.png) no-repeat center;
+  }
+  select {
+    &.custom-select {
+      background: $dark-blue url("../img/arrow-down.png") no-repeat;
+      background-position: right 2.25rem center;
     }
   }
-  .accordion-item {
-    &.is-active {
-      .accordion-title {
-        &:before {
-          background: url(../img/arrow-up.png) no-repeat center;
-        }
+  input {
+    &::placeholder {
+      color: $white;
+      opacity: 1;
+    }
+  }
+  .solution {
+    margin: 4rem 0;
+    >div {
+      margin-right: 4.375rem;
+      &:last-of-type {
+        margin-right: 0;
       }
     }
-  }
-  .accordion-content {
-    border: 0;
-    &:last-child {
-      border-bottom: 0;
+    p {
+      font-size: $font-size-bigger;
+      color: $white;
+      line-height: 1;
+      margin-bottom: 0;
     }
   }
-  :last-child:not(.is-active) > .accordion-title {
-    border-bottom: 0;
+  .remove {
+    margin-left: 1rem;
   }
   @media screen and (max-width: 1440px){
     .h2 {
-      font-size: 1.5rem;
+      font-size: 2.3333rem;
     }
     .tabs-title {
       >a {
-        font-size: 1rem;
+        font-size: 1.1667rem;
       }
     }
-    .accordion-title {
-      padding: 1.2rem;
-      font-size: 1rem;
-      &:before {
-        width: 15px;
+    select,
+    input {
+      padding: 2rem 3rem;
+      font-size: 1.1667rem;
+    }
+    select {
+      &.custom-select {
+        background-size: 15px;
+        background-position: right 1.85rem center;
+      }
+    }
+    .solution {
+      p {
+        font-size: 1.1667rem;
       }
     }
   }
@@ -633,25 +773,36 @@ body {
     .tabs-title {
       margin-right: 4.5rem;
     }
-    .accordion-title {
-      &:before {
-        width: 10px;
-        right: 1.8rem;
+    select {
+      &.custom-select {
+        background-size: 10px;
       }
     }
   }
   @media screen and (max-width: 640px){
+    padding-top: 2rem;
+    .h2 {
+      font-size: 1.5rem;
+    }
     .row-custom {
       max-width: 75rem;
       margin-left: auto;
     }
     .tabs-title {
       margin-right: 3.5rem;
+      >a {
+        font-size: 1rem;
+      }
     }
-    .accordion-title {
-      &:before {
-        width: 8px;
-        right: 1rem;
+    select,
+    input {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    select {
+      &.custom-select {
+        background-size: 8px;
+        background-position: right 1rem center;
       }
     }
   }

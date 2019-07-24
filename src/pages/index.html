@@ -1,4 +1,8 @@
 <div class="mainPage">
+    <div class="lang-panel show-for-xlarge">
+        <a class="lang active" href="#">Ru</a>
+        <a class="lang" href="#">En</a>
+    </div>
     <div class="title-bar" data-responsive-toggle="side-menu" data-hide-for="large-tweak">
         <a href="/"><div class="logo-small"><img src="{{root}}assets/img/logo-small.png"></div></a>
         <button class="menu-toggler" type="button" data-toggle="side-menu">
@@ -9,70 +13,74 @@
     </div>
     <!--side menu-->
     <aside class="sideMenu flex-container flex-dir-column align-justify" id="side-menu">
+        <div class="lang-panel hide-for-xlarge">
+            <a class="lang active" href="#">Ru</a>
+            <a class="lang" href="#">En</a>
+        </div>
         <div class="logo show-for-xlarge">
             <a href="/"><img src="{{root}}assets/img/logo.png" alt="Специальные решения"></a>
         </div>
         <ul class="vertical medium-horizontal large-horizontal xlarge-vertical menu menu-main" data-responsive-menu="drilldown xlarge-accordion"
             data-back-button='<li class="js-drilldown-back"><a tabindex="0">Назад</a></li>'>
-            <div class="xlarge-24 medium-12">
-            <li><a href="#">Оборудование</a>
-                <ul class="menu vertical medium-horizontal large-horizontal hide-for-xlarge">
-                    <div class="large-12 medium-12 small-24">
-                        <li>
-                            <a data-toggle="menu1">Обогатительное оборудование</a>
-                            <div class="menu menu-sub hide-for-xlarge" id="menu1" data-toggler=".toggleMenu">
-                                <div><a href="#">Концентрационные столы</a></div>
-                                <div><a href="#">Мельницы</a></div>
-                                <div><a href="#">Сепараторы</a></div>
-                                <div><a href="#">Грохоты</a></div>
-                                <div><a href="#">Флотомашины</a></div>
-                                <div><a href="#">Классификаторы</a></div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Дробильно-сортировочное оборудование</a>
-                        </li>
-                        <li>
-                            <a href="#">Насосно-компрессорное оборудование</a>
-                        </li>
-                        <li>
-                            <a href="#">Шахтное оборудование</a>
-                        </li>
-                    </div>
-                    <div class="large-12 medium-12 small-24">
-                        <li>
-                            <a href="#">Обжиговое оборудование</a>
-                        </li>
-                        <li>
-                            <a href="#">Детали, запасные части и расходные материалы</a>
-                        </li>
-                        <li>
-                            <a href="#">Буровое оборудование</a>
-                        </li>
-                        <li>
-                            <a href="#">Вулканизационное оборудование</a>
-                        </li>
-                    </div>
-                </ul>
-            </li>
-            <li><a href="#">Монтаж</a></li>
-            <li><a href="#">Доставка</a></li>
-            <li><a href="#">Разработка <br class="show-for-xlarge">документации</a></li>
-            <li><a href="#">О компании</a></li>
+            <div class="xlarge-24 medium-12 small-24">
+                <li><a href="#">Оборудование</a>
+                    <ul class="menu vertical medium-horizontal large-horizontal hide-for-xlarge">
+                        <div class="large-12 medium-12 small-24">
+                            <li>
+                                <a data-toggle="menu1">Обогатительное оборудование</a>
+                                <div class="menu menu-sub hide-for-xlarge" id="menu1" data-toggler=".toggleMenu">
+                                    <div><a href="#">Концентрационные столы</a></div>
+                                    <div><a href="#">Мельницы</a></div>
+                                    <div><a href="#">Сепараторы</a></div>
+                                    <div><a href="#">Грохоты</a></div>
+                                    <div><a href="#">Флотомашины</a></div>
+                                    <div><a href="#">Классификаторы</a></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Дробильно-сортировочное оборудование</a>
+                            </li>
+                            <li>
+                                <a href="#">Насосно-компрессорное оборудование</a>
+                            </li>
+                            <li>
+                                <a href="#">Шахтное оборудование</a>
+                            </li>
+                        </div>
+                        <div class="large-12 medium-12 small-24">
+                            <li>
+                                <a href="#">Обжиговое оборудование</a>
+                            </li>
+                            <li>
+                                <a href="#">Детали, запасные части и расходные материалы</a>
+                            </li>
+                            <li>
+                                <a href="#">Буровое оборудование</a>
+                            </li>
+                            <li>
+                                <a href="#">Вулканизационное оборудование</a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="#">Монтаж</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Разработка <br class="show-for-xlarge">документации</a></li>
+                <li><a href="#">О компании</a></li>
             </div>
-        <div class="xlarge-24 medium-12">
-            <li><a href="#">Проекты и решения</a></li>
-            <li><a href="#">Статьи</a></li>
-            <li><a href="#">Новости</a></li>
-            <li><a href="#">Контакты</a></li>
-        </div>
+            <div class="xlarge-24 medium-12 small-24">
+                <li><a href="#">Проекты и решения</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Контакты</a></li>
+            </div>
         </ul>
         <a href="#" class="button hollow show-for-xlarge">Перейти в каталог</a>
     </aside>
     <div id="pagepiling">
         <!--screen1--summary-->
-        <section class="section block-summary">
-        <div class="bg-main"></div>
+        <section class="section block-summary flex-container align-middle">
+        <div class="bg-main hide-for-small-only"></div>
             <div class="row column section-content">
                 <h2 class="h1">Интеллектуальное оборудование</h2>
                 <p class="lead">
@@ -129,13 +137,13 @@
         </section>
         <!--screen3--projects-->
         <section class="section block-projects">
-            <div class="row section-content show-for-medium-only">
+            <div class="row section-content hide-for-large">
                 <div class="column medium-14 large-16 xxlarge-18">
                     <h2 class="h1">Проекты и решения</h2>
                 </div>
             </div>
             <div class="project-wrapper">
-                <div class="row">
+                <div class="row medium-uncollapse small-collapse">
                     <div class="column large-24 medium-12 small-24">
                         <p class="lead">
                             Вулканизационный пресс серии «КОМПАКТ» ПА 1800/1500 с водяным охлаждением.
@@ -156,7 +164,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row section-content project-small">
+            <div class="row section-content project-small medium-uncollapse small-collapse">
                 <div class="column medium-14 large-13 xxlarge-18 show-for-large">
                     <h2 class="h1">Проекты и решения</h2>
                 </div>
@@ -176,26 +184,35 @@
                 </ul>
                 <div class="tabs-content" data-tabs-content="example-tabs">
                     <div class="tabs-panel is-active" id="item">
-                        <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-                            <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title">Выберите категорию оборудования</a>
-                                <div class="accordion-content" data-tab-content>
-
-                                </div>
-                            </li>
-                            <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title">Выберите тип оборудования</a>
-                                <div class="accordion-content" data-tab-content>
-
-                                </div>
-                            </li>
-                            <li class="accordion-item" data-accordion-item>
-                                <a href="#" class="accordion-title">Введите комплектацию</a>
-                                <div class="accordion-content" data-tab-content>
-
-                                </div>
-                            </li>
-                        </ul>
+                        <form>
+                            <div class="row column">
+                                <select class="custom-select">
+                                    <option value="">Выберите категорию оборудования</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                            <div class="row column">
+                                <select class="custom-select">
+                                    <option value="">Выберите тип оборудования</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                            <div class="row column">
+                                <input type="text" placeholder="Введите комплектацию">
+                            </div>
+                        </form>
+                        <div class="row solution">
+                            <div class="columns shrink flex-container align-middle">
+                                <p>Решение 1</p>
+                                <div class="remove"><img src="{{root}}assets/img/icon-close.png"></div>
+                            </div>
+                            <div class="columns shrink flex-container align-middle">
+                                <p>Решение 2</p>
+                                <div class="remove"><img src="{{root}}assets/img/icon-close.png"></div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="column large-6 medium-9">
                                 <button type="button" class="button expanded btn-custom">Получить консультацию</button>
@@ -213,7 +230,7 @@
             <div class="row column section-content">
                 <h2 class="h1">Контакты</h2>
             </div>
-            <div class="row align-middle section-content">
+            <div class="row align-middle section-content medium-uncollapse small-collapse">
                 <div class="column large-11 medium-10 small-24">
                     <ul class="tabs flex-container flex-dir-row medium-flex-dir-column align-justify" data-tabs id="city-tabs">
                         <li class="tabs-title contacts-city-wrapper is-active">
