@@ -2,7 +2,7 @@ $font-size-normal: 0.875rem;
 $font-size-bigger: 1.25rem;
 $font-size-smaller: 0.75rem;
 $font-size-h1: 4.375rem;
-$offset-top: 19.25rem;
+$offset-top: 19rem;
 $sideMenu-width: 24.75rem;
 @mixin glow {
   box-shadow: 0 0 28px 7px rgba(255, 120, 0, 0.41),
@@ -94,6 +94,11 @@ body {
       font-size: 1rem;
     }
   }
+}
+.tabs,
+.tabs-content {
+  border: 0;
+  background-color: transparent;
 }
 .mainPage {
   position: relative;
@@ -231,8 +236,8 @@ body {
 .menu-sub {
   display: none;
 }
-.toggleMenu {
-  display: block;
+.visible {
+  display: block!important;
 }
 .accordion-menu {
   .is-accordion-submenu-parent {
@@ -303,7 +308,7 @@ body {
       }
     }
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1366px) {
     .menu-main {
       li {
         position: relative;
@@ -505,6 +510,12 @@ body {
     background-position: left center;
     background-size: cover;
   }
+  .summary-content-toggler {
+    position: absolute;
+    bottom: 4.8rem;
+    left: 5.4rem;
+    z-index: 10;
+  }
   .h1 {
     color: $white;
   }
@@ -523,6 +534,18 @@ body {
       }
     }
   }
+  @media screen and (max-width: 1024px) {
+    .summary-content-toggler {
+      left: 12.833rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .summary-content-toggler {
+      left: 4.5rem;
+      bottom: auto;
+      top: 4rem;
+    }
+  }
   @media screen and (max-width: 640px) {
     height: 100vh;
   }
@@ -532,10 +555,47 @@ body {
   background-image: url("../img/bg-about.jpg");
   .h1 {
     color: $black;
+    margin-bottom: 4rem;
+  }
+  .lead {
+    color: $black;
   }
   p {
     &:not(.lead) {
       font-size: $font-size-smaller;
+    }
+  }
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: #acadb5;
+    margin-top: 1rem;
+  }
+  .tabs {
+    margin-bottom: 2.5rem;
+}
+  .tabs-title {
+    margin-right: 1.625rem;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  .tabs-title {
+    > a {
+      font-size: $font-size-normal;
+      color: $black;
+      width: 35px;
+      padding: 0.6rem 0;
+      text-align: center;
+      border: 1px solid transparent;
+      &:hover,
+      &:focus,
+      &[aria-selected='true'] {
+        background: transparent;
+        color: $orange;
+        border-color: $orange;
+        @include glow;
+      }
     }
   }
   @media screen and (max-width: 1440px){
@@ -544,13 +604,61 @@ body {
         font-size: 1rem;
       }
     }
+    .tabs-title {
+      > a {
+        font-size: 1.1667rem;
+        color: $black;
+        width: 25px;
+        padding: 0.4rem 0;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .line {
+      width: 1px;
+      height: 150px;
+      margin: 0 auto;
+    }
+    .lead {
+      margin-bottom: 2.25rem;
+    }
+    .tabs-title {
+      margin-right: 0;
+      margin-bottom: 2rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    .tabs-title {
+      > a {
+        width: 35px;
+        padding: 0.85rem 0;
+      }
+    }
   }
   @media screen and (max-width: 640px) {
     .h1 {
       color: $white;
     }
+    .lead {
+      color: $white;
+    }
     p {
       color: $white;
+    }
+    .tabs-title {
+      > a {
+        font-size: 1rem;
+        color: $white;
+        width: 28px;
+        padding: 0.5rem 0;
+        &:hover,
+        &:focus,
+        &[aria-selected='true'] {
+          color: #ffdb8d;
+          border-color: #ffdb8d;
+        }
+      }
     }
   }
 }
@@ -660,11 +768,7 @@ body {
     line-height: normal;
     margin-bottom: 2.625rem;
   }
-  .tabs-content {
-    border: 0;
-  }
   .tabs {
-    border: 0;
     margin-bottom: 5rem;
   }
   .tabs-title {
@@ -812,11 +916,6 @@ body {
   .h1 {
     color: $white;
     margin-bottom: 4.875rem;
-  }
-  .tabs,
-  .tabs-content {
-    border: 0;
-    background-color: transparent;
   }
   .tabs-title{
     > a {

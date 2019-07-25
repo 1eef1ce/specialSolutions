@@ -28,7 +28,7 @@
                         <div class="large-12 medium-12 small-24">
                             <li>
                                 <a data-toggle="menu1">Обогатительное оборудование</a>
-                                <div class="menu menu-sub hide-for-xlarge" id="menu1" data-toggler=".toggleMenu">
+                                <div class="menu menu-sub hide-for-xlarge" id="menu1" data-toggler=".visible">
                                     <div><a href="#">Концентрационные столы</a></div>
                                     <div><a href="#">Мельницы</a></div>
                                     <div><a href="#">Сепараторы</a></div>
@@ -80,57 +80,148 @@
     <div id="pagepiling">
         <!--screen1--summary-->
         <section class="section block-summary flex-container align-middle">
-        <div class="bg-main hide-for-small-only"></div>
+            <a data-toggle="summary-content" class="summary-content-toggler hide-for-xxlarge hide-for-small-only"><img src="{{root}}assets/img/icon-toggle.png"></a>
+            <div class="bg-main hide-for-small-only"></div>
             <div class="row column section-content">
                 <h2 class="h1">Интеллектуальное оборудование</h2>
                 <p class="lead">
                     для горнодобывающей промышленности
                 </p>
-                <p class="large-18 show-for-xlarge">
-                    Занимаемся производством и инжинирингом сложного горнодобывающего оборудования.
-                    Представляем крупные машиностроительные заводы по всему миру.
-                </p>
-                <div class="large-19 show-for-xlarge">
-                    <ul class="row">
-                        <li class="column large-12">Обогатительное оборудование</li>
-                        <li class="column large-12">Обжиговое оборудование</li>
-                        <li class="column large-12">Дробильно-сортировочное оборудование</li>
-                        <li class="column large-12">Детали, запасные части и расходные материалы</li>
-                        <li class="column large-12">Насосно-компрессорное оборудование</li>
-                        <li class="column large-12">Буровое оборудование</li>
-                        <li class="column large-12">Шахтное оборудование</li>
-                        <li class="column large-12">Вулканизационное оборудование</li>
-                    </ul>
+                <div id="summary-content" class="show-for-xxlarge" data-toggler=".visible">
+                    <p class="large-18 medium-24">
+                        Занимаемся производством и инжинирингом сложного горнодобывающего оборудования.
+                        Представляем крупные машиностроительные заводы по всему миру.
+                    </p>
+                    <div class="large-19 medium-24">
+                        <ul class="row">
+                            <li class="column large-12 medium-12">Обогатительное оборудование</li>
+                            <li class="column large-12 medium-12">Обжиговое оборудование</li>
+                            <li class="column large-12 medium-12">Дробильно-сортировочное оборудование</li>
+                            <li class="column large-12 medium-12">Детали, запасные части и расходные материалы</li>
+                            <li class="column large-12 medium-12">Насосно-компрессорное оборудование</li>
+                            <li class="column large-12 medium-12">Буровое оборудование</li>
+                            <li class="column large-12 medium-12">Шахтное оборудование</li>
+                            <li class="column large-12 medium-12">Вулканизационное оборудование</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
         <!--screen2--about-->
         <section class="section block-about">
-            <div class="row column section-content">
-                <h2 class="h1 large-12">Опережая технологии</h2>
-                <p class="lead large-12">
-                    Работаем совместно с четырьмя крупными научно-исследовательскими институтами
-                </p>
-                <div class="row align-justify">
-                    <div class="column large-10 small-24">
-                        <p>
-                            Компания ООО «Специальные решения» занимается производством и инжинирингом горнодобывающего
-                            оборудования и представляет крупные машиностроительные заводы на территории России и за ее границами.
-                        </p>
-                        <p>
-                            Собственное конструкторское бюро и сервисное подразделение позволяет нам поддерживать
-                            высокие стандарты качества.
-                        </p>
-                    </div>
-                    <div class="column large-10 small-24">
-                        <p>
-                            В горнодобывающей промышленности огромное значение имеет обогатительное оборудование,
-                            которое применяется на фабриках.
-                        </p>
-                        <p>
-                            В современном оборудовании есть множество технически сложных компонентов, которые могут
-                            производиться только высокотехнологичными компаниями.
-                        </p>
+            <div class="row section-content">
+                <div class="row column">
+                    <h2 class="h1 large-12">Опережая технологии</h2>
+                </div>
+                <div class="row">
+                    <ul class="tabs flex-container xlarge-flex-dir-row flex-dir-column column xlarge-24 medium-2 small-4" data-tabs id="about-content">
+                        <li class="tabs-title is-active"><a href="#about1" aria-selected="true">1</a></li>
+                        <li class="tabs-title"><a href="#about2">2</a></li>
+                        <li class="tabs-title"><a href="#about3">3</a></li>
+                    </ul>
+                    <div class="tabs-content column medium-22 small-20" data-tabs-content="about-content">
+                        <div class="tabs-panel is-active" id="about1">
+                            <div class="row">
+                                <div class="column xlarge-4 medium-1 hide-for-small-only">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="column large-20">
+                                    <p class="lead xlarge-12 medium-16 small-24">
+                                        Работаем совместно с четырьмя крупными научно-исследовательскими институтами
+                                    </p>
+                                    <div class="row">
+                                        <div class="column xlarge-10 medium-11 small-24">
+                                            <p>
+                                                Компания ООО «Специальные решения» занимается производством и инжинирингом горнодобывающего
+                                                оборудования и представляет крупные машиностроительные заводы на территории России и за ее границами.
+                                            </p>
+                                            <p>
+                                                Собственное конструкторское бюро и сервисное подразделение позволяет нам поддерживать
+                                                высокие стандарты качества.
+                                            </p>
+                                        </div>
+                                        <div class="column xlarge-10 medium-11 medium-offset-1 small-24">
+                                            <p>
+                                                В горнодобывающей промышленности огромное значение имеет обогатительное оборудование,
+                                                которое применяется на фабриках.
+                                            </p>
+                                            <p>
+                                                В современном оборудовании есть множество технически сложных компонентов, которые могут
+                                                производиться только высокотехнологичными компаниями.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs-panel" id="about2">
+                            <div class="row">
+                                <div class="column xlarge-4 medium-1 hide-for-small-only">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="column large-20">
+                                    <p class="lead xlarge-12 medium-16 small-24">
+                                        Работаем совместно с крупными научно-исследовательскими институтами
+                                    </p>
+                                    <div class="row">
+                                        <div class="column xlarge-10 medium-11 small-24">
+                                            <p>
+                                                Компания ООО «Специальные решения» занимается производством и инжинирингом горнодобывающего
+                                                оборудования и представляет крупные машиностроительные заводы на территории России и за ее границами.
+                                            </p>
+                                            <p>
+                                                Собственное конструкторское бюро и сервисное подразделение позволяет нам поддерживать
+                                                высокие стандарты качества.
+                                            </p>
+                                        </div>
+                                        <div class="column xlarge-10 medium-11 medium-offset-1 small-24">
+                                            <p>
+                                                В горнодобывающей промышленности огромное значение имеет обогатительное оборудование,
+                                                которое применяется на фабриках.
+                                            </p>
+                                            <p>
+                                                В современном оборудовании есть множество технически сложных компонентов, которые могут
+                                                производиться только высокотехнологичными компаниями.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs-panel" id="about3">
+                            <div class="row">
+                                <div class="column xlarge-4 medium-1 hide-for-small-only">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="column large-20">
+                                    <p class="lead xlarge-12 medium-16 small-24">
+                                        Работаем с четырьмя научно-исследовательскими институтами
+                                    </p>
+                                    <div class="row">
+                                        <div class="column xlarge-10 medium-11 small-24">
+                                            <p>
+                                                Компания ООО «Специальные решения» занимается производством и инжинирингом горнодобывающего
+                                                оборудования и представляет крупные машиностроительные заводы на территории России и за ее границами.
+                                            </p>
+                                            <p>
+                                                Собственное конструкторское бюро и сервисное подразделение позволяет нам поддерживать
+                                                высокие стандарты качества.
+                                            </p>
+                                        </div>
+                                        <div class="column xlarge-10 medium-11 medium-offset-1 small-24">
+                                            <p>
+                                                В горнодобывающей промышленности огромное значение имеет обогатительное оборудование,
+                                                которое применяется на фабриках.
+                                            </p>
+                                            <p>
+                                                В современном оборудовании есть множество технически сложных компонентов, которые могут
+                                                производиться только высокотехнологичными компаниями.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -180,7 +271,7 @@
                 <h2 class="h2">нужна консультация по подбору решения?</h2>
                 <ul class="tabs" data-tabs id="example-tabs">
                     <li class="tabs-title is-active"><a href="#item" aria-selected="true">По оборудованию</a></li>
-                    <li class="tabs-title"><a data-tabs-target="issue" href="#issue">По проблеме</a></li>
+                    <li class="tabs-title"><a href="#issue">По проблеме</a></li>
                 </ul>
                 <div class="tabs-content" data-tabs-content="example-tabs">
                     <div class="tabs-panel is-active" id="item">
