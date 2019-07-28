@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import 'what-input';
 import 'lightbox2';
-import 'slick-carousel';
 
 // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -23,7 +22,7 @@ $( document ).ready(function() {
 
 var activate=false;
     $(window).resize(function() {
-        if (($(window).width() > 475)&&(activate===false)) {
+        if (($(window).width() > 640)&&(activate===false)) {
             $('#pagepiling').pagepiling({
                 direction: 'horizontal',
                 anchors: [
@@ -40,6 +39,32 @@ var activate=false;
 
     $(".menu-toggler").click(function () {
         $(this).toggleClass("active");
+    });
+
+    $('.slider-for').slick({
+        arrows: false,
+        fade: true,
+        infinite: false,
+        asNavFor: '.slider-nav',
+    });
+    $('.slider-nav').slick({
+        asNavFor: '.slider-for',
+        arrows: false,
+        dots: true,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    dots: false
+                }
+            }
+        ]
+    });
+    $('.slider-768').slick({
+        arrows: false,
+        dots: true,
+        infinite: false
     });
 
 });

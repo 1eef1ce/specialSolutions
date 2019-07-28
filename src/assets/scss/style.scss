@@ -2,13 +2,17 @@ $font-size-normal: 0.875rem;
 $font-size-bigger: 1.25rem;
 $font-size-smaller: 0.75rem;
 $font-size-h1: 4.375rem;
-$offset-top: 19rem;
+$offset-top: 15rem;
 $sideMenu-width: 24.75rem;
 @mixin glow {
   box-shadow: 0 0 28px 7px rgba(255, 120, 0, 0.41),
   inset 0 0 28px 7px rgba(255, 120, 0, 0.41),
   0 0 8px 4px rgba(255, 132, 0, 0.37),
   inset 0 0 8px 4px rgba(255, 132, 0, 0.37);
+}
+@mixin glow-text {
+  text-shadow: 0 0 28px rgba(255, 120, 0, 0.83),
+  0 0 8px rgba(255, 132, 0, 0.75);
 }
 input,
 textarea {
@@ -121,7 +125,7 @@ body {
       &:focus,
       &.active {
         color: #ffdb8d;
-        @include glow;
+        @include glow-text;
       }
       .pp-viewing-page2 &,
       .pp-viewing-page3 & {
@@ -248,6 +252,19 @@ body {
         }
       }
     }
+  }
+}
+.page-number {
+  position: absolute;
+  top: -2.25rem;
+  left: -1.5rem;
+  font-size: $font-size-normal;
+  color: $light-gray;
+  @media screen and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 1024px) {
+    left: 0;
   }
 }
 .sideMenu {
@@ -423,6 +440,7 @@ body {
     max-width: 86.79%;
     .block-consultation & {
       max-width: 86.79%;
+      margin-top: -10rem;
     }
   }
   @media screen and (max-width: 640px) {
@@ -431,6 +449,7 @@ body {
     padding-right: 2rem;
     .block-consultation & {
       max-width: 100%;
+      margin-top: 0;
     }
   }
 }
@@ -450,6 +469,7 @@ body {
     text-transform: uppercase;
     line-height: normal;
     margin-bottom: 0.875rem;
+    position: relative;
   }
   .lead {
     font-size: $font-size-bigger;
@@ -514,7 +534,7 @@ body {
     position: absolute;
     bottom: 4.8rem;
     left: 5.4rem;
-    z-index: 10;
+    z-index: 100;
   }
   .h1 {
     color: $white;
@@ -543,7 +563,11 @@ body {
     .summary-content-toggler {
       left: 4.5rem;
       bottom: auto;
-      top: 4rem;
+      top: 21rem;
+    }
+    .pp-tableCell {
+      vertical-align: top;
+      padding-top: 7.5rem;
     }
   }
   @media screen and (max-width: 640px) {
@@ -668,7 +692,7 @@ body {
   .h1 {
     color: $white;
     margin-bottom: 4.375rem;
-    margin-top: 18rem;
+    margin-top: $offset-top;
   }
   .project-wrapper {
     background-color: $white;
@@ -695,6 +719,15 @@ body {
       margin-top: 3rem;
     }
   }
+  .vertical-text {
+    position: absolute;
+    top: 0;
+    left: -1.25rem;
+    font-size: $font-size-normal;
+    color: $light-gray;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+  }
   @media screen and (max-width: 1440px){
     .project-wrapper {
       width: 34.145%;
@@ -705,6 +738,9 @@ body {
         }
       }
     }
+    .vertical-text {
+      font-size: 1rem;
+    }
   }
   @media screen and (max-width: 1024px){
     .h1 {
@@ -713,6 +749,12 @@ body {
     .project-wrapper {
       width: 33%;
       padding: 15rem 4rem 0 5rem;
+    }
+    .vertical-text {
+      top: -2.5rem;
+      left: 0.9375rem;
+      writing-mode: horizontal-tb;
+      transform: none;
     }
   }
   @media screen and (max-width: 768px){
@@ -734,12 +776,28 @@ body {
         margin-bottom: 1.5rem;
       }
     }
+    .pp-tableCell {
+      vertical-align: top;
+    }
   }
   @media screen and (max-width: 768px) and (min-width: 641px){
+    .row {
+      max-width: 64rem;
+    }
     .project-small {
-      max-width: 100%;
       background-color: $white;
       padding: 0 4rem;
+    }
+    .project-wrapper {
+      width: 64rem;
+      margin: 0 auto;
+      padding-bottom: 0;
+    }
+    .project-small {
+      padding-top: 3rem;
+    }
+    .h1 {
+      margin-left: 4rem;
     }
   }
   @media screen and (max-width: 640px){
@@ -767,9 +825,10 @@ body {
     text-transform: uppercase;
     line-height: normal;
     margin-bottom: 2.625rem;
+    position: relative;
   }
   .tabs {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .tabs-title {
     position: relative;
@@ -812,24 +871,29 @@ body {
     line-height: 1;
     background-color: $dark-blue;
     transition: none;
-    &:hover {
-      background-color: $orange;
-    }
   }
   select {
     &.custom-select {
       background: $dark-blue url("../img/arrow-down.png") no-repeat;
       background-position: right 2.25rem center;
+      &:hover,
+      &:focus {
+        background-color: $orange;
+        box-shadow: none;
+      }
     }
   }
   input {
+    &:hover {
+      background-color: $orange;
+    }
     &::placeholder {
       color: $white;
       opacity: 1;
     }
   }
   .solution {
-    margin: 4rem 0;
+    margin: 3.5rem 0;
     >div {
       margin-right: 4.375rem;
       &:last-of-type {
@@ -883,6 +947,12 @@ body {
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    select,
+    input {
+      margin-bottom: 3.3333rem;
+    }
+  }
   @media screen and (max-width: 640px){
     padding-top: 2rem;
     .h2 {
@@ -892,21 +962,36 @@ body {
       max-width: 75rem;
       margin-left: auto;
     }
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
     .tabs-title {
-      margin-right: 3.5rem;
+      margin-right: 0;
       >a {
         font-size: 1rem;
       }
     }
     select,
     input {
-      padding: 1rem;
+      padding: 1.16rem 1rem;
       font-size: 1rem;
+      margin-bottom: 1.65rem;
     }
     select {
       &.custom-select {
         background-size: 8px;
         background-position: right 1rem center;
+      }
+    }
+    .solution {
+      justify-content: space-between;
+      >div {
+        margin: 0;
       }
     }
   }
@@ -991,6 +1076,7 @@ body {
       font-size: 1.25rem;
       color: $white;
       line-height: 1.7;
+      margin-top: -0.5rem;
       a {
         color: $white;
         &:hover {
@@ -1127,6 +1213,15 @@ body {
       width: auto;
       text-align: center;
       padding-left: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 475px) {
+    height: calc(100vh - 4rem);
+    ul {
+      &:before,
+      &:after {
+        content: none;
+      }
     }
   }
 }
