@@ -14,6 +14,7 @@ $sideMenu-width: 24.75rem;
   text-shadow: 0 0 28px rgba(255, 120, 0, 0.83),
   0 0 8px rgba(255, 132, 0, 0.75);
 }
+
 input,
 textarea {
   outline: none;
@@ -538,6 +539,7 @@ body {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: cover;
+    margin: -1px 0 0 -1px;
   }
   .summary-content-toggler {
     position: absolute;
@@ -620,7 +622,7 @@ body {
   }
   .tabs {
     margin-bottom: 2.5rem;
-}
+  }
   .tabs-title {
     margin-right: 1.625rem;
     &:last-of-type {
@@ -828,7 +830,8 @@ body {
       padding-bottom: 0;
     }
     .project-small {
-      padding-top: 3rem;
+      padding: 3rem 0;
+      margin-top: -1px;
     }
     .h1 {
       margin-left: 4rem;

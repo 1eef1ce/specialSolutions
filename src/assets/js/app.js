@@ -67,5 +67,9 @@ var activate=false;
         infinite: false
     });
 
+    $(".requisites .close-button").click(function () {
+        $('.requisites').foundation('close');
+    });
+
 });
 
