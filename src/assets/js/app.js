@@ -50,10 +50,14 @@ $( document ).ready(function() {
     });
 
     $('.slider-certificates').slick({
-        infinite: false,
         arrows: false,
+        dots: true,
+        customPaging : function(slider, i) {
+            var thumb = jQuery(slider.$slides[i]).data();
+            return '<a>'+('0'+(i+1)).slice(-2)+'</a>';
+        },
         slidesToShow: 3,
-        responsive: [
+                responsive: [
             {
                 breakpoint: 640,
                 settings: {
@@ -64,6 +68,7 @@ $( document ).ready(function() {
             }
         ]
     });
+
     $('.news').slick({
         infinite: false,
         arrows: false,
@@ -75,6 +80,7 @@ $( document ).ready(function() {
             }
         ]
     });
+
     $('.slider-items').slick({
         infinite: false,
         slidesToShow: 3,
