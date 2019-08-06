@@ -14,6 +14,32 @@ $sideMenu-width: 24.75rem;
   text-shadow: 0 0 28px rgba(255, 120, 0, 0.83),
   0 0 8px rgba(255, 132, 0, 0.75);
 }
+@mixin img-wrapper {
+  width: 68px;
+  height: 68px;
+  position: relative;
+  border: 1px solid #b2b2b2;
+  margin: 0.5rem;
+  &:hover, &:focus {
+    border-color: $orange;
+  }
+  @media screen and (max-width: 1440px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media screen and (max-width: 640px) {
+    margin: 1rem;
+  }
+}
+@mixin img-absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  margin: auto;
+}
 .no-js {
   @include breakpoint(small only) {
     .top-bar {
@@ -1434,6 +1460,10 @@ a {
     color: $white;
     padding: 3.75rem 0 3rem;
     background-color: $bg-color;
+    p,
+    a {
+      font-weight: 300;
+    }
     .logo {
       width: 12.75rem;
       margin-bottom: 2.5rem;
@@ -1442,7 +1472,7 @@ a {
       display: block;
       column-count: 6;
       li {
-        margin: 0.375rem 2rem 0.375rem 0;
+        margin: 0.375rem 1.25rem 0.375rem 0;
       }
     }
     .requisites {
@@ -1579,7 +1609,7 @@ a {
       .menu {
         column-count: 4;
         li {
-          margin-right: 0;
+          margin-right: 2.5rem;
         }
       }
     }
@@ -1905,6 +1935,20 @@ a {
       }
     }
   }
+  .slider-items {
+    margin: 4rem -0.5rem 2rem;
+    .item-img {
+      @include img-wrapper;
+      img {
+        @include img-absolute;
+      }
+    }
+  }
+  .item-3d {
+    img {
+      margin-left: 1rem;
+    }
+  }
   .item-adds {
     p {
       font-weight: 700;
@@ -1919,20 +1963,10 @@ a {
     .adds-wrapper {
       margin: 0 -0.5rem!important;
       .adds-img {
-        width: 68px;
-        height: 68px;
-        position: relative;
-        border: 1px solid #b2b2b2;
-        margin: 0.5rem;
+        @include img-wrapper;
         float: left;
         img {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          max-width: 100%;
-          margin: auto;
+          @include img-absolute;
         }
       }
     }
@@ -1984,14 +2018,6 @@ a {
     .btn-custom {
       font-size: 1.1667rem;
     }
-    .item-adds {
-      .adds-wrapper {
-        .adds-img {
-          width: 50px;
-          height: 50px;
-        }
-      }
-    }
     .item-specs {
       margin-bottom: 6rem;
     }
@@ -2023,6 +2049,19 @@ a {
     }
   }
   @media screen and (max-width: 640px) {
+    padding-top: 2.5rem!important;
+    .slider-items {
+      margin: 1.75rem -0.25rem;
+      .item-img {
+        margin: 0.25rem;
+      }
+    }
+    .item-3d {
+      float: right;
+    }
+    .item-big {
+      margin-top: 1.65rem;
+    }
     .item-wrapper {
       margin-bottom: 2rem;
     }
@@ -2033,9 +2072,6 @@ a {
       }
       .adds-wrapper {
         margin: 0 -1rem!important;
-        .adds-img {
-          margin: 1rem;
-        }
       }
     }
     .btn-custom {

@@ -167,3 +167,40 @@
 .slick-initialized .slick-slide {
     display: flex;
 }
+.slider-items .slick-prev,
+.slider-items .slick-next {
+    left: 2rem;
+}
+.slider-items .slick-prev {
+    top: -10px;
+}
+.slider-items .slick-next {
+    top: auto;
+    right: auto;
+    bottom: -20px;
+}
+.slider-items .slick-prev:before,
+.slider-items .slick-next:before {
+    opacity: 1;
+}
+.slider-items .slick-prev:before {
+    content: url("/assets/img/icons/arrow-up-small.png");
+}
+.slider-items .slick-next:before {
+    content: url("/assets/img/icons/arrow-down-small.png");
+}
+@media screen and (max-width: 640px) {
+    .slider-items .slick-prev,
+    .slider-items .slick-next {
+        transform: rotate(-90deg);
+        top: 1.5rem;
+    }
+    .slider-items .slick-prev {
+        left: -2rem;
+    }
+    .slider-items .slick-next {
+        left: auto;
+        right: -1rem;
+        bottom: auto;
+    }
+}

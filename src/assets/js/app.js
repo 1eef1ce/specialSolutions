@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import 'what-input';
-import 'lightbox2';
 
 // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -76,6 +75,19 @@ $( document ).ready(function() {
             }
         ]
     });
+    $('.slider-items').slick({
+        infinite: false,
+        slidesToShow: 3,
+        vertical: true,
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    vertical: false
+                }
+            }
+        ]
+    });
 
     $(".requisites .close-button").click(function () {
         $('.requisites').foundation('close');
@@ -83,7 +95,7 @@ $( document ).ready(function() {
 
     var activate=false;
     $(window).resize(function() {
-        if (($(window).width() > 640)&&(activate===false)) {
+        if (($('body>div').hasClass('mainPage'))&&($(window).width() > 640)&&(activate===false)) {
             $('#pagepiling').pagepiling({
                 direction: 'horizontal',
                 anchors: [
