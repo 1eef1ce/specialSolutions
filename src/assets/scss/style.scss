@@ -1693,6 +1693,9 @@ a {
     }
   }
 }
+.block-geography {
+  padding-bottom: 10rem;
+}
 .geography-wrapper {
   background-color: #f5f4f4;
   padding: 5.375rem 6.65rem 3.75rem 3.125rem;
@@ -1720,8 +1723,13 @@ a {
 }
 .block-certificates {
     h4 {
-      margin-bottom: 3.5rem;
+      margin-bottom: 4.5rem;
     }
+  @media screen and (max-width: 1024px) {
+    h4 {
+      margin-bottom: 4rem;
+    }
+  }
 }
 .partners {
   margin-top: 3rem;
@@ -1735,18 +1743,38 @@ a {
 .news {
   margin-top: 5rem;
 }
-.news-col {
-  margin-bottom: 2rem;
+.swiper-slide {
   @media screen and (max-width: 640px) {
     &:not(:first-of-type) {
-      padding-top: 2rem;
-      border-top: 1px solid #808080;
-      .news-date,
-      .news-image,
-      .pattern {
-        display: none;
+      .news-col {
+        width: 100%;
+        padding-top: 2rem;
+        border-top: 1px solid #808080;
+        .news-date,
+        .news-image,
+        .pattern {
+          display: none;
+        }
       }
     }
+  }
+}
+.news-col {
+  margin-bottom: 5.75rem;
+  float: left;
+  @media screen and (max-width: 640px) {
+    margin-bottom: 2.5rem;
+  }
+}
+.swiper-wrapper {
+  @media screen and (max-width: 640px) {
+    height: auto;
+    flex-direction: column;
+  }
+}
+.swiper-scrollbar {
+  @media screen and (max-width: 640px) {
+    display: none;
   }
 }
 .news-wrapper {
@@ -1758,11 +1786,13 @@ a {
     margin-bottom: 0.875rem;
   }
   .news-image {
+    display: block;
     position: relative;
     margin-bottom: 1.5rem;
   }
   p {
     margin-bottom: 2.25rem;
+    color: $black;
   }
   a {
     &.more {
@@ -1809,7 +1839,6 @@ a {
     }
   }
   @media screen and (max-width: 640px) {
-    width: 90%;
     .pattern {
       width: 85%;
       height: 40%;
@@ -1817,6 +1846,7 @@ a {
     }
   }
 }
+
 .item-card {
   padding-top: 4.5rem!important;
   .breadcrumbs-wrapper {
@@ -1942,6 +1972,10 @@ a {
       img {
         @include img-absolute;
       }
+      a {
+        display: block;
+        height: 100%;
+      }
     }
   }
   .item-3d {
@@ -1954,7 +1988,7 @@ a {
       font-weight: 700;
       line-height: normal;
     }
-    a {
+    a.item-all {
       color: $black;
       text-decoration: underline;
       display: inline-block;
@@ -1967,6 +2001,10 @@ a {
         float: left;
         img {
           @include img-absolute;
+        }
+        a {
+          display: block;
+          height: 100%;
         }
       }
     }
