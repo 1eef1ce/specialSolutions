@@ -1,36 +1,5 @@
 <div class="page">
-    <header>
-        <div class="row column">
-            <div class="title-bar" data-responsive-toggle="top-nav" data-hide-for="large-tweak">
-                <div class="logo-small"><a href="/"><img src="{{root}}assets/img/images/logo-small.png"></a></div>
-                <button class="menu-toggler" type="button" data-toggle="top-nav">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="top-bar align-justify" id="top-nav">
-                <div class="logo">
-                    <a href="/"><img src="{{root}}assets/img/images/logo-horizontal.png" alt="Специальные решения"></a>
-                </div>
-                <ul class="menu large-flex-dir-row flex-dir-column">
-                    <li><a href="{{root}}/card.html">Оборудование</a></li>
-                    <li><a href="#">Монтаж</a></li>
-                    <li><a href="#">Доставка</a></li>
-                    <li><a href="#">Разработка документации</a></li>
-                    <li><a href="{{root}}/about.html">О компании</a></li>
-                    <li><a href="{{root}}/projects.html">Проекты и решения</a></li>
-                    <li><a href="#">Статьи</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
-                <div class="lang-panel">
-                    <a class="lang active" href="#">Ru</a>
-                    <a class="lang" href="#">En</a>
-                </div>
-            </div>
-        </div>
-    </header>
+    {{> header}}
     <section class="projects">
         <div class="row position-relative">
             <div class="breadcrumbs-wrapper">
@@ -72,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row project-wrapper">
-                    <div class="columns small-22 medium-10 large-12 position-relative small-order-2 medium-order-1">
+                    <div class="columns small-22 medium-10 large-12 position-relative small-order-2 medium-order-1 small-offset-2 medium-offset-0">
                         <div class="project-position top right row show-for-large">
                             <div class="columns large-11">
                                 <a href="#">
@@ -95,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="columns small-22 medium-14 large-12 small-order-1 medium-order-2">
+                    <div class="columns small-22 medium-14 large-12 small-order-1 medium-order-2 small-offset-2 medium-offset-0">
                         <img class="width-100" src="{{root}}assets/img/images/img-project1.jpg">
                     </div>
                 </div>
@@ -132,93 +101,5 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="row">
-            <div class="columns xlarge-6 small-24">
-                <div class="row">
-                    <div class="columns xlarge-24 medium-12 small-24">
-                        <div class="logo">
-                            <a href="/"><img src="{{root}}assets/img/images/logo-horizontal.png" alt="Специальные решения"></a>
-                        </div>
-                        <div class="requisites">
-                            <p>
-                                ООО "Специальные решения"<span class="show-for-small-only"> &copy; 2015-2019 г.</span><br>
-                                ИНН 2465322195<br>
-                                ОГРН 1142468062395
-                            </p>
-                        </div>
-                    </div>
-                    <div class="columns xlarge-24 medium-12 small-24 text-left medium-text-right xlarge-text-left flex-container flex-dir-column">
-                        <div class="requisites small-order-1 medium-order-2 xlarge-order-1">
-                            <p>
-                                <a href="#">Политика конфиденциальности</a><br>
-                            <span class="hide-for-small-only">&copy; 2015-2019 г.</span>
-                            </p>
-                        </div>
-                        <div class="social-icons small-order-2 medium-order-1 xlarge-order-2">
-                            <a href="#"><img src="{{root}}assets/img/icons/instagram.svg"></a>
-                            <a href="#"><img src="{{root}}assets/img/icons/youtube.png"></a>
-                            <a href="#"><img src="{{root}}assets/img/icons/google-plus.svg"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="columns xxlarge-18 xxlarge-offset-0 xlarge-16 xlarge-offset-2 show-for-xlarge">
-                <ul class="menu">
-                    <li><a href="#">Скруббер - Бутары</a></li>
-                    <li><a href="#">Чаны контактные</a></li>
-                    <li><a href="#">Классификаторы</a></li>
-                    <li><a href="#">Флотомашины</a></li>
-                    <li><a href="#">Грохоты</a></li>
-                    <li><a href="#">Сепараторы</a></li>
-                    <li><a href="#">Мельницы</a></li>
-                    <li><a href="#">Грохоты ГИСЛ</a></li>
-                    <li><a href="#">Гидроциклон купить</a></li>
-                    <li><a href="#">Питатель купить</a></li>
-                    <li><a href="#">Купить молотковую дробилку</a></li>
-                    <li><a href="#">Дробильно-фрезерная машина ДФМ</a></li>
-                    <li><a href="#">Элеваторы</a></li>
-                    <li><a href="#">Дробилки-грохота барабанного типа ДГБ</a></li>
-                    <li><a href="#">Конвейерное оборудование</a></li>
-                    <li><a href="#">Дробилки</a></li>
-                    <li><a href="#">Вулканизационное оборудование</a></li>
-                    <li><a href="#">Вулканизатор кабельный</a></li>
-                    <li><a href="#">Прессы для стыковки конвейерных лент</a></li>
-                    <li><a href="#">Грохоты ГИТ</a></li>
-                    <li><a href="#">Гидромониторы</a></li>
-                    <li><a href="#">Электронасосные агрегаты ЭЦВ, НД, НМШ, АЭНЦСК</a></li>
-                    <li><a href="#">Монтаж промышленного оборудования</a></li>
-                    <li><a href="#">Проектирование агрегатов, отдельных деталей и узлов, электрических схем</a></li>
-                    <li><a href="#">Горно-шахтное оборудование</a></li>
-                    <li><a href="#">Промышленные печи</a></li>
-                    <li><a href="#">Металлодетекторы промышленные</a></li>
-                    <li><a href="#">Электровозы</a></li>
-                    <li><a href="#">Клети шахтные</a></li>
-                    <li><a href="#">Вагонетки шахтные</a></li>
-                    <li><a href="#">Мельницы ММС 70х23, 90х30, 50х23, 9150х3150</a></li>
-                    <li><a href="#">Лебедка скреперная</a></li>
-                    <li><a href="#">Подъемные клети</a></li>
-                    <li><a href="#">Вагонетки ВГ</a></li>
-                    <li><a href="#">Пробоотборники</a></li>
-                    <li><a href="#">Одноступенчатый цилиндрический редуктор купить</a></li>
-                    <li><a href="#">Вращающиеся, обжиговые, барабанные печи</a></li>
-                    <li><a href="#">Купить дробилку щековую СМД</a></li>
-                    <li><a href="#">Продажа роторных дробилок</a></li>
-                    <li><a href="#">Заказать конусную дробилку</a></li>
-                    <li><a href="#">Валковая дробилка цена</a></li>
-                    <li><a href="#">Доставка оборудования</a></li>
-                    <li><a href="#">Магнитные сепараторы</a></li>
-                    <li><a href="#">Запасные части для дробилок</a></li>
-                    <li><a href="#">Редукторы</a></li>
-                    <li><a href="#">Приводы промышленных машин</a></li>
-                    <li><a href="#">Запасные части для гидроциклонов ГЦР</a></li>
-                    <li><a href="#">Комплектующие для конвееров</a></li>
-                    <li><a href="#">Запасные части для экскаваторов</a></li>
-                    <li><a href="#">Запасные части для буровых станков</a></li>
-                    <li><a href="#">Вибропитатель</a></li>
-                    <li><a href="#">Компрессоры</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    {{> footer}}
 </div>

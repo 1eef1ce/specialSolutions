@@ -11,8 +11,8 @@ $sideMenu-width: 24.75rem;
   inset 0 0 8px 4px rgba(255, 132, 0, 0.37);
 }
 @mixin glow-text {
-  text-shadow: 0 0 28px rgba(255, 120, 0, 0.83),
-  0 0 8px rgba(255, 132, 0, 0.75);
+  text-shadow: 2px 5px 28px rgba(255, 120, 0, 0.9),
+  2px 5px 8px rgba(255, 132, 0, 0.9);
 }
 @mixin img-wrapper {
   width: 68px;
@@ -160,30 +160,40 @@ a {
   border: 0;
   background-color: transparent;
 }
-.lang {
-  font-size: 0.875rem;
-  color: #a1a5ac;
-  line-height: 1;
-  text-transform: uppercase;
-  margin-right: 1.75rem;
-  &:last-of-type {
-    margin-right: 0;
-  }
-  &:hover,
-  &:focus,
-  &.active {
-    color: #ff8f1d;
-    // @include glow-text;
-    text-shadow: 2px 5px 28px rgba(255, 120, 0, 0.9), 2px 5px 8px rgba(255, 132, 0, 0.9);
-  }
-  .pp-viewing-page2 &,
-  .pp-viewing-page3 & {
-    color: $black;
+.lang-panel {
+  .lang {
+    font-size: 0.875rem;
+    color: #a1a5ac;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-right: 1.75rem;
+    &:last-of-type {
+      margin-right: 0;
+    }
     &:hover,
     &:focus,
     &.active {
-      color: $orange;
+      color: #ff8f1d;
+      @include glow-text;
     }
+  }
+  @media screen and (max-width: 1024px) {
+    top: 4.5rem;
+    right: 4rem;
+    .lang {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    top: 2.5rem;
+    right: auto;
+    left: 5.6667rem;
+  }
+  @media screen and (max-width: 640px) {
+    top: auto;
+    left: auto;
+    right: 2rem;
+    bottom: 2.5rem;
   }
 }
 .title-bar {
@@ -217,90 +227,80 @@ a {
     }
   }
 }
-.mainPage {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  .lang-panel {
-    position: absolute;
-    top: 6.5rem;
-    right: 5.75rem;
-    z-index: 10;
-    .lang {
-      margin-right: 2.25rem;
-      .pp-viewing-page2 &,
-      .pp-viewing-page3 & {
-        color: $black;
-        &:hover,
-        &:focus,
-        &.active {
-          color: $orange;
-        }
-      }
+/** Menus **/
+.top-bar, .sideMenu {
+  >.is-drilldown {
+    width: 100%;
+    max-width: 100%!important;
+    min-height: 100%!important;
+    margin: 25% 0;
+  }
+}
+.menu-main {
+  margin-left: 1.125rem;
+  li {
+    margin-bottom: 1.25rem;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 1px;
+      background: #4e535e;
+      top: 1em;
+      left: -24px;
+    }
+    &:hover:before {
+      background: #e3801e;
+      height: 3px;
+      width: 4.375rem;
+      left: -4.375rem;
+    }
+  }
+  a {
+    display: inline-block;
+    color: $white;
+    background-color: $bg-color;
+    line-height: normal;
+    padding: 0.5rem 1rem;
+  }
+  @media screen and (min-width: 1366px) {
+    li {
+      position: relative;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    margin-left: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    >div {
+      flex-shrink: unset;
     }
   }
   @media screen and (max-width: 1024px) {
-    .lang-panel {
-      top: 4.5rem;
-      right: 4rem;
-      .lang {
-        font-size: 1rem;
+    li {
+      &:before {
+        content: none;
       }
     }
-  }
-  @media screen and (max-width: 768px) {
-    padding-top: 106px;
-    .lang-panel {
-      top: 2.5rem;
-      right: auto;
-      left: 5.6667rem;
+    a {
+      font-size: 1.3333rem;
     }
   }
   @media screen and (max-width: 640px) {
-    padding-top: 47px;
-    .lang-panel {
-      top: auto;
-      left: auto;
-      right: 2rem;
-      bottom: 2.5rem;
+    font-size: 1.1667rem;
+    li {
+      margin-bottom: 1rem;
     }
-  }
-  .title-bar {
-    position: absolute;
-    top: 0;
-    z-index: 100;
-    @media screen and (max-width: 1024px) {
-      width: 112px;
-      padding: 48px 24px 55px 32px;
-      height: 100%;
-      .logo-small {
-        top: 48px;
-        left: 32px;
-      }
-    }
-    @media screen and (max-width: 768px) {
-      width: 100%;
-      height: 106px;
-      padding: 42px 58px 35px 68px;
-      .logo-small {
-        width: 53px;
-        left: 68px;
-        top: 42px;
-      }
-    }
-    @media screen and (max-width: 640px) {
-      width: 100%;
-      height: 47px;
-      padding: 23px 26px 8px;
-      .logo-small {
-        width: 40px;
-        left: 26px;
-        top: 23px;
-      }
+    a {
+      font-size: 1.1667rem;
+      padding: 0.5rem 0.75rem;
     }
   }
 }
 .drilldown {
+  a {
+    background: $bg-color;
+  }
   .is-drilldown-submenu {
     background-color: $bg-color;
     &.is-active {
@@ -337,9 +337,27 @@ a {
 }
 .menu-sub {
   display: none;
+  @media screen and (max-width: 1024px) {
+    margin-left: 2.5rem;
+  }
+  @media screen and (max-width: 640px) {
+    margin-left: 1.75rem;
+    a {
+      font-size: 1rem;
+    }
+  }
 }
-.visible {
-  display: block!important;
+.submenu {
+  @media screen and (max-width: 1024px) {
+    a {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    a {
+      font-size: 1rem;
+    }
+  }
 }
 .accordion-menu {
   .is-accordion-submenu-parent {
@@ -351,6 +369,74 @@ a {
       }
     }
   }
+}
+/** Main page **/
+.mainPage {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  .lang-panel {
+    position: absolute;
+  }
+  @media screen and (min-width: 1025px) {
+    .lang-panel {
+      top: 6.5rem;
+      right: 5.75rem;
+      z-index: 10;
+      .lang {
+        margin-right: 2.25rem;
+        .pp-viewing-page2 &,
+        .pp-viewing-page3 & {
+          color: $black;
+          &:hover,
+          &:focus,
+          &.active {
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding-top: 106px;
+  }
+  @media screen and (max-width: 640px) {
+    padding-top: 47px;
+  }
+  .title-bar {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    @media screen and (max-width: 1024px) {
+      width: 112px;
+      padding: 48px 24px 55px 32px;
+      height: 100%;
+      .logo-small {
+        top: 48px;
+        left: 32px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      height: 106px;
+      padding: 42px 58px 35px 68px;
+      .logo-small {
+        left: 68px;
+      }
+    }
+    @media screen and (max-width: 640px) {
+      width: 100%;
+      height: 47px;
+      padding: 15px 26px 16px;
+      .logo-small {
+        left: 26px;
+        top: 15px;
+      }
+    }
+  }
+}
+.visible {
+  display: block!important;
 }
 .page-number {
   position: absolute;
@@ -373,41 +459,8 @@ a {
   padding: 4.375rem 4.75rem 5rem;
   height: 100vh;
   z-index: 1000;
-  >.is-drilldown {
-    max-width: 100%!important;
-    min-height: 100%!important;
-    margin: 25% 0;
-  }
   .logo {
     margin-left: 2.125rem;
-  }
-  .menu-main {
-    margin-left: 1.125rem;
-    li {
-      margin-bottom: 1.25rem;
-      &:before {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 1px;
-        background: #4e535e;
-        top: 1em;
-        left: -24px;
-      }
-      &:hover:before {
-        background: #e3801e;
-        height: 3px;
-        width: 4.375rem;
-        left: -4.375rem;
-      }
-    }
-    a {
-      display: inline-block;
-      color: $white;
-      background-color: $bg-color;
-      line-height: normal;
-      padding: 0.5rem 1rem;
-    }
   }
   .button {
     &.hollow {
@@ -423,19 +476,9 @@ a {
       }
     }
   }
-  @media screen and (min-width: 1366px) {
-    .menu-main {
-      li {
-        position: relative;
-      }
-    }
-  }
   @media screen and (max-width: 1440px) {
     .logo {
       width: 9rem;
-    }
-    .menu-main {
-      margin-left: 0;
     }
     .button {
       &.hollow {
@@ -443,35 +486,10 @@ a {
       }
     }
   }
-  @media screen and (min-width: 1200px) {
-    .menu-main {
-      >div {
-        flex-shrink: unset;
-      }
-    }
-  }
   @media screen and (max-width: 1024px) {
     left: 112px;
     width: calc(100% - 112px);
     padding: 0 3.6667rem;
-    .menu-main {
-      li {
-        &:before {
-          content: none;
-        }
-      }
-      a {
-        font-size: 1.3333rem;
-      }
-    }
-    .submenu {
-      a {
-        font-size: 1rem;
-      }
-    }
-    .menu-sub {
-      margin-left: 2.5rem;
-    }
   }
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -483,31 +501,113 @@ a {
     padding: 0 2.1667rem;
     top: 47px;
     height: calc(100% - 47px);
-    .menu-main {
-      font-size: 1.1667rem;
+    li {
+      &.js-drilldown-back {
+        margin-bottom: 2.25rem;
+      }
+    }
+  }
+}
+.top-bar {
+  padding: 0;
+  background-color: $bg-color;
+  flex-wrap: wrap;
+  .menu-main {
+    margin-left: 0;
+    li {
+      &:before {
+        content: none;
+      }
+    }
+  }
+  .accordion-menu li {
+    width: auto;
+  }
+  ul {
+    background-color: $bg-color;
+  }
+  @media screen and (min-width: 1440px) {
+    .menu {
       li {
-        margin-bottom: 1rem;
-      }
-      a {
-        font-size: 1.1667rem;
-        padding: 0.5rem 0.75rem;
+        margin: 0 1rem;
+        a {
+          padding: 0;
+        }
       }
     }
-    .submenu {
-      a {
+  }
+  @media screen and (max-width: 1440px) and (min-width: 1199px) {
+    .logo {
+      width: 14.834rem;
+    }
+    .menu {
+      li {
+        margin: 0 1rem;
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+        a {
+          padding: 0;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1365px) and (min-width: 1200px) {
+    .logo {
+      width: 12rem;
+    }
+    li {
+      margin: 0 0.5rem!important;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 1000;
+    width: 100%;
+    padding: 0 3.6667rem;
+    .lang-panel {
+      position: absolute;
+      top: 4.5rem;
+      right: 4rem;
+      .lang {
         font-size: 1rem;
       }
     }
-    .menu-sub {
-      margin-left: 1.75rem;
-      a {
-        font-size: 1rem;
-      }
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    left: 0;
+    top: 106px;
+    padding: 0 4.66rem;
+    .lang-panel {
+      top: 2.5rem;
+      right: auto;
+      left: 5.6667rem;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    padding: 0 2.1667rem;
+    top: 47px;
+    height: calc(100% - 47px);
+    .menu {
+      flex-direction: column;
     }
     li {
       &.js-drilldown-back {
         margin-bottom: 2.25rem;
       }
+    }
+    .lang-panel {
+      top: auto;
+      left: auto;
+      right: 2rem;
+      bottom: 2.5rem;
     }
   }
 }
@@ -1428,33 +1528,17 @@ a {
     }
   }
 }
-/**content pages**/
+/**Content pages**/
 .page {
   background-color: $white;
+  height: 100vh;
+  overflow: auto;
   .row {
     max-width: 90%;
-  }
-  .top-bar {
-    padding: 0;
-    background-color: $bg-color;
-    ul {
-      background-color: $bg-color;
-    }
   }
   header {
     padding: 1.125rem 0 1.25rem;
     background-color: $bg-color;
-    .menu {
-      li {
-        margin: 0 1rem;
-      }
-    }
-  }
-  .menu {
-    a {
-      line-height: 1.25;
-      padding: 0;
-    }
   }
   footer {
     color: $white;
@@ -1463,6 +1547,11 @@ a {
     p,
     a {
       font-weight: 300;
+    }
+    a {
+      font-size: $font-size-normal;
+      padding: 0;
+      line-height: 1.25;
     }
     .logo {
       width: 12.75rem;
@@ -1597,19 +1686,14 @@ a {
     h4 {
       font-size: 2.3333rem;
     }
-    .logo {
-      width: 14.834rem;
-    }
-    .menu {
-      a {
-        font-size: 0.8525rem;
-      }
-    }
     footer {
       .menu {
         column-count: 4;
         li {
           margin-right: 2.5rem;
+          a {
+            font-size: 0.8525rem;
+          }
         }
       }
     }
@@ -1623,11 +1707,6 @@ a {
     }
   }
   @media screen and (max-width: 1024px) {
-    .top-bar {
-      .menu {
-        flex-direction: column;
-      }
-    }
     .breadcrumbs-wrapper {
       display: none;
     }
@@ -1638,6 +1717,9 @@ a {
       }
     }
     footer {
+      a {
+        font-size: 1.3333rem;
+      }
       .social-icons {
         margin: 0 -10px 2.5rem;
       }
@@ -1846,7 +1928,6 @@ a {
     }
   }
 }
-
 .item-card {
   padding-top: 4.5rem!important;
   .breadcrumbs-wrapper {
@@ -1859,12 +1940,28 @@ a {
   }
   .accordion-menu {
     a {
+      padding: 0;
       line-height: 1.5;
     }
     >li {
+      position: relative;
       margin-bottom: 2rem;
       &:last-of-type {
         margin-bottom: 0;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background: #d0d1d9;
+        top: 0.65em;
+        left: -34px;
+      }
+      &:hover:before,
+      &[aria-expanded="true"]:before {
+        width: 5rem;
+        left: -6rem;
       }
     }
   }
