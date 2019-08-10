@@ -1579,11 +1579,11 @@ a {
         margin: 0 10px;
         img {
           height: 18px;
-          filter: grayscale(1);
+          filter: opacity(0.5);
         }
         &:hover {
           img {
-            filter: grayscale(0);
+            filter: opacity(1);
           }
         }
       }
@@ -1630,6 +1630,11 @@ a {
     content: '\27F6';
     margin: 0.75rem 0;
     color: $black;
+  }
+  .projects {
+    .breadcrumbs li:not(:last-child)::after {
+      color: $white;
+    }
   }
   .breadcrumbs {
     a {
@@ -1700,11 +1705,6 @@ a {
     .breadcrumbs-wrapper {
       top: 0;
     }
-    .image-text {
-      p {
-        font-size: 1.6667rem;
-      }
-    }
   }
   @media screen and (max-width: 1024px) {
     .breadcrumbs-wrapper {
@@ -1739,7 +1739,15 @@ a {
       font-size: 1.6667rem;
     }
     .image-large {
-      height: 30rem;
+      .image-text {
+        color: $white;
+        margin-top: 4.15rem;
+        p {
+          font-size: 1.6667rem;
+          font-weight: 400;
+          margin-bottom: 0;
+        }
+      }
     }
   }
   @media screen and (max-width: 640px) {
@@ -1748,6 +1756,20 @@ a {
     }
     h4 {
       font-size: 1.834rem;
+    }
+    .image-large {
+      height: 30rem;
+      .image-text {
+        color: $black;
+        margin-top: 0;
+        p {
+          font-size: 1.1667rem;
+          font-weight: 700;
+          text-align: right;
+          line-height: normal;
+          margin-top: -1.25rem;
+        }
+      }
     }
   }
 }
@@ -1986,8 +2008,9 @@ a {
     height: 100%;
     background-color: #d0d1d9;
   }
-  .item-wrapper {
-    margin-bottom: 6.5rem;
+  .item-specs,
+  .item-params {
+    margin-top: 6.5rem;
   }
   h4 {
     margin-bottom: 1.25rem;
@@ -2160,9 +2183,14 @@ a {
       font-size: 1.1667rem;
     }
   }
+  @media screen and (max-width: 1439px) {
+    .item-params {
+      margin-top: 0;
+    }
+  }
   @media screen and (max-width: 768px) {
-    .item-wrapper {
-      margin-bottom: 5.5rem;
+    .item-specs {
+      margin-top: 5.5rem;
     }
     .item-adds {
       margin-top: 3.5rem;
@@ -2197,8 +2225,8 @@ a {
     .item-big {
       margin-top: 1.65rem;
     }
-    .item-wrapper {
-      margin-bottom: 2rem;
+    .item-specs {
+      margin-top: 3.25rem;
     }
     .item-adds {
       p {

@@ -44,7 +44,7 @@
             </div>
         </div>
     </section>
-    <div class="image-large" style="background-image: url('{{root}}assets/img/images/img-about1.jpg')"></div>
+    <div class="image-large" data-interchange="[{{root}}assets/img/images/img-about1-320.jpg, small], [{{root}}assets/img/images/img-about1.jpg, medium]"></div>
     <section class="block-geography">
         <div class="row align-middle">
             <div class="columns large-15 small-24">
@@ -60,14 +60,21 @@
             </div>
         </div>
     </section>
-    <div class="image-large" style="background-image: url('{{root}}assets/img/images/img-about2.jpg')">
+    <div class="image-large" data-interchange="[{{root}}assets/img/images/img-about2-320.jpg, small], [{{root}}assets/img/images/img-about2.jpg, medium]">
         <div class="row">
             <div class="columns xlarge-8 xlarge-offset-2 large-9 medium-7 image-text">
-                <div class="line"></div>
-                <h4>Полный цикл </h4>
-                <p class="lead">
-                    от изготовления до монтажа
-                </p>
+                <div class="hide-for-small-only">
+                    <div class="line"></div>
+                    <h4>Полный цикл </h4>
+                    <p class="lead">
+                        от изготовления до монтажа
+                    </p>
+                </div>
+                <div class="show-for-small-only">
+                    <p>
+                        Полный цикл<br>от изготовления<br>до монтажа
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -98,19 +105,19 @@
             </div>
         </div>
     </section>
-    <div class="image-large" style="background-image: url('{{root}}assets/img/images/img-about3.jpg')"></div>
+    <div class="image-large" data-interchange="[{{root}}assets/img/images/img-about3-320.jpg, small], [{{root}}assets/img/images/img-about3.jpg, medium]"></div>
     <section class="block-partners">
         <div class="row">
             <div class="column xlarge-20 float-center">
                 <div class="row column">
                     <h4>Нам доверяют</h4>
                 </div>
-                <div class="partners row align-justify text-center">
-                    <div class="columns large-4 medium-6 small-12"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
-                    <div class="columns large-4 medium-6 small-12"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
-                    <div class="columns large-4 medium-6 small-12"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
-                    <div class="columns large-4 medium-6 small-12"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
-                    <div class="columns large-4 medium-6 small-12"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
+                <div class="partners row slider-partners">
+                    <div class="columns"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
+                    <div class="columns"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
+                    <div class="columns"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
+                    <div class="columns"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
+                    <div class="columns"><img src="{{root}}assets/img/images/RosNeft-logo.png"></div>
                 </div>
             </div>
         </div>

@@ -167,6 +167,9 @@
 .slick-initialized .slick-slide {
     display: flex;
 }
+.slick-slide img {
+    margin: auto;
+}
 /**slider-items**/
 .slider-items .slick-prev,
 .slider-items .slick-next {

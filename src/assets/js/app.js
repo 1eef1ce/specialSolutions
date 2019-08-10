@@ -63,8 +63,8 @@ $( document ).ready(function() {
                 breakpoint: 640,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
-                    centerMode: true
+                    centerMode: true,
+                    infinite: false
                 }
             }
         ]
@@ -79,6 +79,25 @@ $( document ).ready(function() {
                 breakpoint: 640,
                 settings: {
                     vertical: false
+                }
+            }
+        ]
+    });
+
+    $('.slider-partners').slick({
+        infinite: false,
+        slidesToShow: 5,
+        responsive: [
+            {
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 2
                 }
             }
         ]
